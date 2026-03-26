@@ -164,4 +164,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Crop Image",
   },
+  mergePdf: {
+    name: "PDF Merge Tool",
+    description:
+      "Combine multiple PDF files into one instantly. Free online PDF merge tool with secure processing and fast download.",
+    path: "/tools/merge-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Merge PDF",
+  },
 } satisfies Record<string, ToolSchemaInput>;

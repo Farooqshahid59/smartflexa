@@ -8,6 +8,7 @@ import {
   FileImage,
   FileJson,
   FileText,
+  Files,
   Gift,
   ImageIcon,
   Images,
@@ -79,6 +80,13 @@ export const defaultTools: ToolItem[] = [
       "Convert JPEG images to lossless PNG with instant preview and download.",
     icon: FileImage,
     href: "/tools/jpg-to-png",
+  },
+  {
+    name: "Merge PDF",
+    description:
+      "Combine multiple PDFs into one file with reordering—all in your browser.",
+    icon: Files,
+    href: "/tools/merge-pdf",
   },
   {
     name: "PDF Tools",
@@ -244,6 +252,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Crop Image", href: "/tools/crop-image" },
       { name: "PNG to JPG", href: "/tools/png-to-jpg" },
       { name: "JPG to PNG", href: "/tools/jpg-to-png" },
+      { name: "Merge PDF", href: "/tools/merge-pdf" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],
