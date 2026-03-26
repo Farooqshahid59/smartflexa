@@ -4,6 +4,7 @@ import {
   Braces,
   Calculator,
   Code,
+  Globe,
   Link2,
   Code2,
   Crop,
@@ -140,6 +141,13 @@ export const defaultTools: ToolItem[] = [
       "Turn titles into clean, SEO-friendly URL slugs with live preview and copy.",
     icon: Link2,
     href: "/tools/slug-generator",
+  },
+  {
+    name: "URL Encoder & Decoder",
+    description:
+      "Percent-encode or decode URL text with encodeURIComponent and decodeURIComponent.",
+    icon: Globe,
+    href: "/tools/url-encoder-decoder",
   },
   {
     name: "PDF Tools",
@@ -313,6 +321,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Remove Duplicate Lines", href: "/tools/remove-duplicate-lines" },
       { name: "Text Case Converter", href: "/tools/text-case-converter" },
       { name: "Slug Generator", href: "/tools/slug-generator" },
+      { name: "URL Encoder & Decoder", href: "/tools/url-encoder-decoder" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

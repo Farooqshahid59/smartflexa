@@ -228,4 +228,12 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Slug Generator",
   },
+  urlEncoderDecoder: {
+    name: "URL Encoder Decoder Tool",
+    description:
+      "Encode and decode URL components with percent-encoding. Fast, free online tool for SmartFlexa — runs in your browser.",
+    path: "/tools/url-encoder-decoder",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "URL Encoder Decoder",
+  },
 } satisfies Record<string, ToolSchemaInput>;
