@@ -112,6 +112,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/pdf-to-word",
   },
   {
+    name: "Word to PDF",
+    description:
+      "Convert DOC/DOCX to PDF format (placeholder conversion for now).",
+    icon: FileText,
+    href: "/tools/word-to-pdf",
+  },
+  {
     name: "PDF Tools",
     description: "Merge, split, compress, and convert PDF files quickly and securely.",
     icon: FileText,
@@ -279,6 +286,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Split PDF", href: "/tools/split-pdf" },
       { name: "Compress PDF", href: "/tools/compress-pdf" },
       { name: "PDF to Word", href: "/tools/pdf-to-word" },
+      { name: "Word to PDF", href: "/tools/word-to-pdf" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],
