@@ -220,4 +220,12 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Text Case Converter",
   },
+  slugGenerator: {
+    name: "Slug Generator Tool",
+    description:
+      "Generate SEO-friendly URL slugs from titles or phrases. Clean, readable permalinks for websites and blogs — free and runs in your browser.",
+    path: "/tools/slug-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Slug Generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;

@@ -1,41 +1,12 @@
 "use client";
 
-import {
-  ChangeEvent,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, useId, useMemo, useState } from "react";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
-
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Remove Duplicate Lines Online Free | SmartFlexa",
-  description:
-    "Remove duplicate lines from text instantly. Free online tool to clean and deduplicate text quickly and securely.",
-  alternates: {
-    canonical: "https://smartflexa.com/tools/remove-duplicate-lines",
-  },
-  openGraph: {
-    title: "Remove Duplicate Lines Online Free | SmartFlexa",
-    description:
-      "Remove duplicate lines from text instantly. Free online tool to clean and deduplicate text quickly and securely.",
-    type: "website",
-    siteName: "SmartFlexa",
-    url: "/tools/remove-duplicate-lines",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
 
 function formatLineKey(line: string, caseSensitive: boolean): string {
   return caseSensitive ? line : line.toLowerCase();

@@ -12,6 +12,7 @@ const LINKS = [
   { href: "/tools/word-to-pdf", label: "Word to PDF" },
   { href: "/tools/remove-duplicate-lines", label: "Remove Duplicate Lines" },
   { href: "/tools/text-case-converter", label: "Text Case Converter" },
+  { href: "/tools/slug-generator", label: "Slug Generator" },
   { href: "/tools/png-to-jpg", label: "PNG to JPG" },
   { href: "/tools/jpg-to-png", label: "JPG to PNG" },
   { href: "/tools/json-formatter", label: "JSON Formatter" },

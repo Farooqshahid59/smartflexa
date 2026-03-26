@@ -4,6 +4,7 @@ import {
   Braces,
   Calculator,
   Code,
+  Link2,
   Code2,
   Crop,
   FileImage,
@@ -132,6 +133,13 @@ export const defaultTools: ToolItem[] = [
       "Switch between uppercase, lowercase, title case, and sentence case instantly in your browser.",
     icon: ALargeSmall,
     href: "/tools/text-case-converter",
+  },
+  {
+    name: "Slug Generator",
+    description:
+      "Turn titles into clean, SEO-friendly URL slugs with live preview and copy.",
+    icon: Link2,
+    href: "/tools/slug-generator",
   },
   {
     name: "PDF Tools",
@@ -304,6 +312,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Word to PDF", href: "/tools/word-to-pdf" },
       { name: "Remove Duplicate Lines", href: "/tools/remove-duplicate-lines" },
       { name: "Text Case Converter", href: "/tools/text-case-converter" },
+      { name: "Slug Generator", href: "/tools/slug-generator" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],
