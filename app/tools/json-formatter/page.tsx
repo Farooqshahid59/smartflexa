@@ -86,14 +86,12 @@ export default function JsonFormatterPage() {
   const [output, setOutput] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [copyStatus, setCopyStatus] = useState<string | null>(null);
-  const copyStatusClearRef = useRef<ReturnType<typeof setTimeout> | null>(
-    null,
-  );
+  const copyStatusClearRef = useRef<number | null>(null);
 
   useEffect(() => {
     return () => {
       if (copyStatusClearRef.current) {
-        clearTimeout(copyStatusClearRef.current);
+        window.clearTimeout(copyStatusClearRef.current);
       }
     };
   }, []);
@@ -133,7 +131,7 @@ export default function JsonFormatterPage() {
       setCopyStatus("Copied to clipboard.");
       setError(null);
       if (copyStatusClearRef.current) {
-        clearTimeout(copyStatusClearRef.current);
+        window.clearTimeout(copyStatusClearRef.current);
       }
       copyStatusClearRef.current = window.setTimeout(() => {
         setCopyStatus(null);
