@@ -140,4 +140,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Resize Image",
   },
+  pngToJpg: {
+    name: "PNG to JPG Converter",
+    description:
+      "Free online PNG to JPG converter. Convert PNG images to JPG instantly with preview and download. Fast and secure.",
+    path: "/tools/png-to-jpg",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "PNG to JPG Converter",
+  },
 } satisfies Record<string, ToolSchemaInput>;

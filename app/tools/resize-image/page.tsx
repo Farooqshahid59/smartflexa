@@ -295,6 +295,48 @@ export default function ResizeImagePage() {
               accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
               onChange={onInputChange}
             />
+
+            {(file || resizedBlob) && (
+              <div className="mb-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-lg border border-border bg-muted/20 p-4">
+                  <h2 className="text-sm font-semibold text-foreground">Original</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {file && originalSize
+                      ? `${originalSize.w} x ${originalSize.h} • ${formatKB(file.size)}`
+                      : "—"}
+                  </p>
+                  {previewOriginal ? (
+                    <img
+                      src={previewOriginal}
+                      alt="Original uploaded preview"
+                      className="mt-3 h-48 w-full rounded-md border border-border object-contain bg-background"
+                    />
+                  ) : null}
+                </div>
+                <div className="rounded-lg border border-border bg-muted/20 p-4">
+                  <h2 className="text-sm font-semibold text-foreground">Resized</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {resizedBlob
+                      ? `${Math.round(Number(width))} x ${Math.round(Number(height))} • ${formatKB(
+                          resizedBlob.size,
+                        )}`
+                      : "—"}
+                  </p>
+                  {previewResized ? (
+                    <img
+                      src={previewResized}
+                      alt="Resized image preview"
+                      className="mt-3 h-48 w-full rounded-md border border-border object-contain bg-background"
+                    />
+                  ) : (
+                    <div className="mt-3 flex h-48 items-center justify-center rounded-md border border-dashed border-border bg-background text-xs text-muted-foreground">
+                      Resized preview will appear here
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div
               onDrop={onDrop}
               onDragOver={onDragOver}
@@ -431,47 +473,6 @@ export default function ResizeImagePage() {
                 {error}
               </p>
             ) : null}
-
-            {(file || resizedBlob) && (
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-border bg-muted/20 p-4">
-                  <h2 className="text-sm font-semibold text-foreground">Original</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {file && originalSize
-                      ? `${originalSize.w} x ${originalSize.h} • ${formatKB(file.size)}`
-                      : "—"}
-                  </p>
-                  {previewOriginal ? (
-                    <img
-                      src={previewOriginal}
-                      alt="Original uploaded preview"
-                      className="mt-3 h-48 w-full rounded-md border border-border object-contain bg-background"
-                    />
-                  ) : null}
-                </div>
-                <div className="rounded-lg border border-border bg-muted/20 p-4">
-                  <h2 className="text-sm font-semibold text-foreground">Resized</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {resizedBlob
-                      ? `${Math.round(Number(width))} x ${Math.round(Number(height))} • ${formatKB(
-                          resizedBlob.size,
-                        )}`
-                      : "—"}
-                  </p>
-                  {previewResized ? (
-                    <img
-                      src={previewResized}
-                      alt="Resized image preview"
-                      className="mt-3 h-48 w-full rounded-md border border-border object-contain bg-background"
-                    />
-                  ) : (
-                    <div className="mt-3 flex h-48 items-center justify-center rounded-md border border-dashed border-border bg-background text-xs text-muted-foreground">
-                      Resized preview will appear here
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
           </section>
 
           <article className="mt-14 space-y-10" aria-labelledby="resize-seo-heading">

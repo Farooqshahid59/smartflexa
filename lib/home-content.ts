@@ -9,6 +9,7 @@ import {
   FileText,
   Gift,
   ImageIcon,
+  Images,
   Lock,
   Palette,
   ShieldCheck,
@@ -56,6 +57,13 @@ export const defaultTools: ToolItem[] = [
       "Resize images with custom dimensions or presets like passport and Instagram.",
     icon: ImageIcon,
     href: "/tools/resize-image",
+  },
+  {
+    name: "PNG to JPG",
+    description:
+      "Convert PNG images to JPG with optional background for transparent areas.",
+    icon: Images,
+    href: "/tools/png-to-jpg",
   },
   {
     name: "PDF Tools",
@@ -218,6 +226,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "Image to WebP", href: "/tools/image-to-webp" },
       { name: "Resize Image", href: "/tools/resize-image" },
+      { name: "PNG to JPG", href: "/tools/png-to-jpg" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],
