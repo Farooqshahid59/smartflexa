@@ -255,4 +255,12 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "HTML to Text Converter",
   },
+  jsonMinifier: {
+    name: "JSON Minifier Tool",
+    description:
+      "Minify JSON online: remove whitespace and line breaks for smaller payloads. Free, fast, and runs in your browser.",
+    path: "/tools/json-minifier",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "JSON Minifier",
+  },
 } satisfies Record<string, ToolSchemaInput>;

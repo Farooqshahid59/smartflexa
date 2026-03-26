@@ -46,6 +46,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/json-formatter",
   },
   {
+    name: "JSON Minifier",
+    description:
+      "Compress JSON by stripping whitespace—ideal for APIs and smaller payloads.",
+    icon: Braces,
+    href: "/tools/json-minifier",
+  },
+  {
     name: "HTML to Text",
     description:
       "Strip HTML tags and decode entities to clean plain text in your browser.",
@@ -315,6 +322,7 @@ export const defaultFooterColumns: FooterColumn[] = [
     title: "Tools",
     links: [
       { name: "JSON Formatter", href: "/tools/json-formatter" },
+      { name: "JSON Minifier", href: "/tools/json-minifier" },
       { name: "HTML to Text", href: "/tools/html-to-text" },
       { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
