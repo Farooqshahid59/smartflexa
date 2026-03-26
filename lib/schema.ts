@@ -25,7 +25,10 @@ export function getWebSiteJsonLd(): Record<string, unknown> {
   };
 }
 
-type ToolCategory = "DeveloperApplication" | "UtilityApplication";
+type ToolCategory =
+  | "DeveloperApplication"
+  | "UtilityApplication"
+  | "SecurityApplication";
 
 export type ToolSchemaInput = {
   name: string;
@@ -235,5 +238,13 @@ export const toolSchemas = {
     path: "/tools/url-encoder-decoder",
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "URL Encoder Decoder",
+  },
+  passwordGenerator: {
+    name: "Password Generator Tool",
+    description:
+      "Generate secure random passwords with customizable length and character sets. Free strength-aware password generator — runs in your browser.",
+    path: "/tools/password-generator",
+    applicationCategory: "SecurityApplication" as const,
+    breadcrumbName: "Password Generator",
   },
 } satisfies Record<string, ToolSchemaInput>;

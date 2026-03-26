@@ -170,7 +170,8 @@ export const defaultTools: ToolItem[] = [
   },
   {
     name: "Password Generator",
-    description: "Generate strong, secure passwords with customizable options.",
+    description:
+      "Random passwords with length control, character sets, and a live strength meter.",
     icon: Lock,
     href: "/tools/password-generator",
   },
@@ -322,6 +323,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Text Case Converter", href: "/tools/text-case-converter" },
       { name: "Slug Generator", href: "/tools/slug-generator" },
       { name: "URL Encoder & Decoder", href: "/tools/url-encoder-decoder" },
+      { name: "Password Generator", href: "/tools/password-generator" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],
