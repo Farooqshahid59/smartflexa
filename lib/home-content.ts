@@ -14,6 +14,7 @@ import {
   ImageIcon,
   Images,
   Lock,
+  Minimize2,
   Palette,
   ShieldCheck,
   UserX,
@@ -95,6 +96,13 @@ export const defaultTools: ToolItem[] = [
       "Extract page ranges or split every page into separate files—ZIP download.",
     icon: Split,
     href: "/tools/split-pdf",
+  },
+  {
+    name: "Compress PDF",
+    description:
+      "Reduce PDF file size with low, medium, or high compression presets.",
+    icon: Minimize2,
+    href: "/tools/compress-pdf",
   },
   {
     name: "PDF Tools",
@@ -262,6 +270,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "JPG to PNG", href: "/tools/jpg-to-png" },
       { name: "Merge PDF", href: "/tools/merge-pdf" },
       { name: "Split PDF", href: "/tools/split-pdf" },
+      { name: "Compress PDF", href: "/tools/compress-pdf" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

@@ -180,4 +180,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Split PDF",
   },
+  compressPdf: {
+    name: "PDF Compressor Tool",
+    description:
+      "Reduce PDF file size online with our free PDF compressor. Fast, secure, and easy to use.",
+    path: "/tools/compress-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Compress PDF",
+  },
 } satisfies Record<string, ToolSchemaInput>;
