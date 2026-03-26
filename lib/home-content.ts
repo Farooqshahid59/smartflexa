@@ -51,6 +51,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/image-to-webp",
   },
   {
+    name: "Resize Image",
+    description:
+      "Resize images with custom dimensions or presets like passport and Instagram.",
+    icon: ImageIcon,
+    href: "/tools/resize-image",
+  },
+  {
     name: "PDF Tools",
     description: "Merge, split, compress, and convert PDF files quickly and securely.",
     icon: FileText,
@@ -210,6 +217,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "Image to WebP", href: "/tools/image-to-webp" },
+      { name: "Resize Image", href: "/tools/resize-image" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

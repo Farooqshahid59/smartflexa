@@ -132,4 +132,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Image to WebP Converter",
   },
+  resizeImage: {
+    name: "Image Resizer Tool",
+    description:
+      "Resize images to any size or preset dimensions like passport and Instagram. Free online image resizer tool with instant preview.",
+    path: "/tools/resize-image",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Resize Image",
+  },
 } satisfies Record<string, ToolSchemaInput>;
