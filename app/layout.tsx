@@ -12,10 +12,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Production: https://www.smartflexa.com/
+const siteUrl = "https://www.smartflexa.com";
+
 export const metadata: Metadata = {
-  title: "SmartFlexa — Smart tools that simplify your work",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "SmartFlexa — Smart tools that simplify your work",
+    template: "%s | SmartFlexa",
+  },
   description:
     "Free online tools for developers, creators, and everyday users. JSON formatter, image compressor, PDF tools, and more.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "SmartFlexa",
+    title: "SmartFlexa — Smart tools that simplify your work",
+    description:
+      "Free online tools for developers, creators, and everyday users. JSON formatter, image compressor, PDF tools, and more.",
+  },
 };
 
 export default function RootLayout({
