@@ -271,4 +271,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "QR Code Generator",
   },
+  loremIpsumGenerator: {
+    name: "Lorem Ipsum Generator",
+    description:
+      "Generate lorem ipsum placeholder paragraphs with optional word counts. Free dummy text for layouts—runs in your browser.",
+    path: "/tools/lorem-ipsum-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Lorem Ipsum Generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;

@@ -22,6 +22,7 @@ const LINKS = [
   { href: "/tools/json-minifier", label: "JSON Minifier" },
   { href: "/tools/html-to-text", label: "HTML to Text" },
   { href: "/tools/word-counter", label: "Word Counter" },
+  { href: "/tools/lorem-ipsum-generator", label: "Lorem Ipsum" },
   { href: "/tools/base64-encoder-decoder", label: "Base64" },
 ] as const;
 

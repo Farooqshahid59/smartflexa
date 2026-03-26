@@ -22,6 +22,7 @@ import {
   Minimize2,
   Palette,
   ShieldCheck,
+  TextQuote,
   UserX,
   Zap,
 } from "lucide-react";
@@ -59,6 +60,13 @@ export const defaultTools: ToolItem[] = [
       "Strip HTML tags and decode entities to clean plain text in your browser.",
     icon: FileCode,
     href: "/tools/html-to-text",
+  },
+  {
+    name: "Lorem Ipsum Generator",
+    description:
+      "Placeholder paragraphs for mockups—set paragraph count and optional word total.",
+    icon: TextQuote,
+    href: "/tools/lorem-ipsum-generator",
   },
   {
     name: "Image Compressor",
@@ -332,6 +340,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "JSON Formatter", href: "/tools/json-formatter" },
       { name: "JSON Minifier", href: "/tools/json-minifier" },
       { name: "HTML to Text", href: "/tools/html-to-text" },
+      { name: "Lorem Ipsum Generator", href: "/tools/lorem-ipsum-generator" },
       { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "Image to WebP", href: "/tools/image-to-webp" },
