@@ -4,6 +4,7 @@ const LINKS = [
   { href: "/tools/image-compressor", label: "Image Compressor" },
   { href: "/tools/image-to-webp", label: "Image to WebP" },
   { href: "/tools/resize-image", label: "Resize Image" },
+  { href: "/tools/crop-image", label: "Crop Image" },
   { href: "/tools/png-to-jpg", label: "PNG to JPG" },
   { href: "/tools/jpg-to-png", label: "JPG to PNG" },
   { href: "/tools/json-formatter", label: "JSON Formatter" },

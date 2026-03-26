@@ -4,6 +4,7 @@ import {
   Calculator,
   Code,
   Code2,
+  Crop,
   FileImage,
   FileJson,
   FileText,
@@ -57,6 +58,13 @@ export const defaultTools: ToolItem[] = [
       "Resize images with custom dimensions or presets like passport and Instagram.",
     icon: ImageIcon,
     href: "/tools/resize-image",
+  },
+  {
+    name: "Crop Image",
+    description:
+      "Crop images with rectangle or circle selection, preview, and instant download.",
+    icon: Crop,
+    href: "/tools/crop-image",
   },
   {
     name: "PNG to JPG",
@@ -233,6 +241,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "Image to WebP", href: "/tools/image-to-webp" },
       { name: "Resize Image", href: "/tools/resize-image" },
+      { name: "Crop Image", href: "/tools/crop-image" },
       { name: "PNG to JPG", href: "/tools/png-to-jpg" },
       { name: "JPG to PNG", href: "/tools/jpg-to-png" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },

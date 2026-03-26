@@ -156,4 +156,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "JPG to PNG Converter",
   },
+  cropImage: {
+    name: "Image Crop Tool",
+    description:
+      "Crop images online easily with rectangle or circle crop. Free tool for Instagram, profile pictures, and more.",
+    path: "/tools/crop-image",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Crop Image",
+  },
 } satisfies Record<string, ToolSchemaInput>;
