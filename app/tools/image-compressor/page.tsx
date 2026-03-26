@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   ChangeEvent,
   DragEvent,
@@ -13,6 +12,7 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
@@ -526,28 +526,7 @@ export default function ImageCompressorPage() {
               </div>
             </dl>
 
-            <section aria-labelledby="related-tools-heading">
-              <h2
-                id="related-tools-heading"
-                className="text-2xl font-bold tracking-tight text-foreground"
-              >
-                Related tools
-              </h2>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/tools/json-formatter" className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted">
-                  JSON Formatter
-                </Link>
-                <Link href="/tools/word-counter" className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted">
-                  Word Counter
-                </Link>
-                <Link href="/tools/base64-encoder-decoder" className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted">
-                  Base64
-                </Link>
-                <Link href="/tools/image-compressor" className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted">
-                  Image Compressor
-                </Link>
-              </div>
-            </section>
+            <RelatedTools currentPath="/tools/image-compressor" />
           </article>
         </div>
       </main>

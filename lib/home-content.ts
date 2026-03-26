@@ -4,6 +4,7 @@ import {
   Calculator,
   Code,
   Code2,
+  FileImage,
   FileJson,
   FileText,
   Gift,
@@ -41,6 +42,13 @@ export const defaultTools: ToolItem[] = [
       "Compress images without losing quality. Supports PNG, JPG, and WebP.",
     icon: ImageIcon,
     href: "/tools/image-compressor",
+  },
+  {
+    name: "Image to WebP",
+    description:
+      "Convert JPG and PNG images to WebP format for smaller files and faster pages.",
+    icon: FileImage,
+    href: "/tools/image-to-webp",
   },
   {
     name: "PDF Tools",
@@ -201,6 +209,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "JSON Formatter", href: "/tools/json-formatter" },
       { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
+      { name: "Image to WebP", href: "/tools/image-to-webp" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

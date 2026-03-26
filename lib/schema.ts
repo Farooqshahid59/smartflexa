@@ -124,4 +124,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Image Compressor",
   },
+  imageToWebp: {
+    name: "Image to WebP Converter",
+    description:
+      "Convert JPG and PNG images to WebP format online. Reduce image size and improve performance. Free and secure tool.",
+    path: "/tools/image-to-webp",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Image to WebP Converter",
+  },
 } satisfies Record<string, ToolSchemaInput>;
