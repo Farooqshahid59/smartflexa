@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  ALargeSmall,
   Braces,
   Calculator,
   Code,
@@ -124,6 +125,13 @@ export const defaultTools: ToolItem[] = [
       "Remove repeated lines from text while preserving order. Case-sensitive matching optional.",
     icon: FileText,
     href: "/tools/remove-duplicate-lines",
+  },
+  {
+    name: "Text Case Converter",
+    description:
+      "Switch between uppercase, lowercase, title case, and sentence case instantly in your browser.",
+    icon: ALargeSmall,
+    href: "/tools/text-case-converter",
   },
   {
     name: "PDF Tools",
@@ -295,6 +303,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "PDF to Word", href: "/tools/pdf-to-word" },
       { name: "Word to PDF", href: "/tools/word-to-pdf" },
       { name: "Remove Duplicate Lines", href: "/tools/remove-duplicate-lines" },
+      { name: "Text Case Converter", href: "/tools/text-case-converter" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

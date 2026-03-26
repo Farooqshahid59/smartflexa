@@ -212,4 +212,12 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Remove Duplicate Lines",
   },
+  textCaseConverter: {
+    name: "Text Case Converter",
+    description:
+      "Convert text to uppercase, lowercase, title case, or sentence case instantly. Free online tool for SmartFlexa — runs in your browser.",
+    path: "/tools/text-case-converter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Text Case Converter",
+  },
 } satisfies Record<string, ToolSchemaInput>;

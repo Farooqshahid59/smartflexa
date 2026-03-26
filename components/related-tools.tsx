@@ -11,6 +11,7 @@ const LINKS = [
   { href: "/tools/pdf-to-word", label: "PDF to Word" },
   { href: "/tools/word-to-pdf", label: "Word to PDF" },
   { href: "/tools/remove-duplicate-lines", label: "Remove Duplicate Lines" },
+  { href: "/tools/text-case-converter", label: "Text Case Converter" },
   { href: "/tools/png-to-jpg", label: "PNG to JPG" },
   { href: "/tools/jpg-to-png", label: "JPG to PNG" },
   { href: "/tools/json-formatter", label: "JSON Formatter" },
