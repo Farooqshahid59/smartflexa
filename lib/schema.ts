@@ -247,4 +247,12 @@ export const toolSchemas = {
     applicationCategory: "SecurityApplication" as const,
     breadcrumbName: "Password Generator",
   },
+  htmlToText: {
+    name: "HTML to Text Converter",
+    description:
+      "Convert HTML to plain text online. Strip tags, decode entities, and keep readable line breaks — free and runs in your browser.",
+    path: "/tools/html-to-text",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "HTML to Text Converter",
+  },
 } satisfies Record<string, ToolSchemaInput>;

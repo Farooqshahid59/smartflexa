@@ -10,6 +10,7 @@ import {
   Crop,
   FileImage,
   FileJson,
+  FileCode,
   FileText,
   Files,
   Gift,
@@ -43,6 +44,13 @@ export const defaultTools: ToolItem[] = [
       "Format, validate, and beautify your JSON data with syntax highlighting.",
     icon: Braces,
     href: "/tools/json-formatter",
+  },
+  {
+    name: "HTML to Text",
+    description:
+      "Strip HTML tags and decode entities to clean plain text in your browser.",
+    icon: FileCode,
+    href: "/tools/html-to-text",
   },
   {
     name: "Image Compressor",
@@ -307,6 +315,7 @@ export const defaultFooterColumns: FooterColumn[] = [
     title: "Tools",
     links: [
       { name: "JSON Formatter", href: "/tools/json-formatter" },
+      { name: "HTML to Text", href: "/tools/html-to-text" },
       { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "Image to WebP", href: "/tools/image-to-webp" },
