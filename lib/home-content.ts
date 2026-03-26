@@ -119,6 +119,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/word-to-pdf",
   },
   {
+    name: "Remove Duplicate Lines",
+    description:
+      "Remove repeated lines from text while preserving order. Case-sensitive matching optional.",
+    icon: FileText,
+    href: "/tools/remove-duplicate-lines",
+  },
+  {
     name: "PDF Tools",
     description: "Merge, split, compress, and convert PDF files quickly and securely.",
     icon: FileText,
@@ -287,6 +294,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Compress PDF", href: "/tools/compress-pdf" },
       { name: "PDF to Word", href: "/tools/pdf-to-word" },
       { name: "Word to PDF", href: "/tools/word-to-pdf" },
+      { name: "Remove Duplicate Lines", href: "/tools/remove-duplicate-lines" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

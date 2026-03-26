@@ -204,4 +204,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Word to PDF Converter",
   },
+  removeDuplicateLines: {
+    name: "Remove Duplicate Lines Tool",
+    description:
+      "Remove duplicate lines from text online for free. Clean and deduplicate text instantly while preserving order. Fast and secure.",
+    path: "/tools/remove-duplicate-lines",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Remove Duplicate Lines",
+  },
 } satisfies Record<string, ToolSchemaInput>;
