@@ -286,7 +286,7 @@ export const defaultFooterColumns: FooterColumn[] = [
   {
     title: "Legal",
     links: [
-      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms of Service", href: "/terms" },
     ],
   },
