@@ -49,10 +49,11 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/pdf-tools",
   },
   {
-    name: "Base64 Encoder",
-    description: "Encode and decode text or files to and from Base64 format.",
+    name: "Base64 Encoder & Decoder",
+    description:
+      "Encode plain text to Base64 or decode Base64 back to text in your browser.",
     icon: Code,
-    href: "/tools/base64",
+    href: "/tools/base64-encoder-decoder",
   },
   {
     name: "Color Converter",
@@ -198,6 +199,7 @@ export const defaultFooterColumns: FooterColumn[] = [
     title: "Tools",
     links: [
       { name: "JSON Formatter", href: "/tools/json-formatter" },
+      { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },

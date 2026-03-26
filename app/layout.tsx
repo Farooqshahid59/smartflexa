@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { siteUrl } from "@/lib/site";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,9 +14,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// Production: https://www.smartflexa.com/
-const siteUrl = "https://www.smartflexa.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
