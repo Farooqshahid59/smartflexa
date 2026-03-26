@@ -393,6 +393,41 @@ export default function JsonFormatterPage() {
                 </dd>
               </div>
             </dl>
+
+            <section aria-labelledby="related-tools-heading">
+              <h2
+                id="related-tools-heading"
+                className="text-2xl font-bold tracking-tight text-foreground"
+              >
+                Related tools
+              </h2>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <a
+                  href="/tools/json-formatter"
+                  className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted"
+                >
+                  JSON Formatter
+                </a>
+                <a
+                  href="/tools/word-counter"
+                  className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted"
+                >
+                  Word Counter
+                </a>
+                <a
+                  href="/tools/base64-encoder-decoder"
+                  className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted"
+                >
+                  Base64
+                </a>
+                <a
+                  href="/tools/image-compressor"
+                  className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted"
+                >
+                  Image Compressor
+                </a>
+              </div>
+            </section>
           </article>
         </div>
       </main>
