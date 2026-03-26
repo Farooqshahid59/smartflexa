@@ -5,6 +5,7 @@ import {
   Calculator,
   Code,
   Globe,
+  QrCode,
   Link2,
   Code2,
   Crop,
@@ -163,6 +164,13 @@ export const defaultTools: ToolItem[] = [
       "Percent-encode or decode URL text with encodeURIComponent and decodeURIComponent.",
     icon: Globe,
     href: "/tools/url-encoder-decoder",
+  },
+  {
+    name: "QR Code Generator",
+    description:
+      "Create scannable QR codes from text or links with instant preview and PNG download.",
+    icon: QrCode,
+    href: "/tools/qr-code-generator",
   },
   {
     name: "PDF Tools",
@@ -340,6 +348,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Text Case Converter", href: "/tools/text-case-converter" },
       { name: "Slug Generator", href: "/tools/slug-generator" },
       { name: "URL Encoder & Decoder", href: "/tools/url-encoder-decoder" },
+      { name: "QR Code Generator", href: "/tools/qr-code-generator" },
       { name: "Password Generator", href: "/tools/password-generator" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },

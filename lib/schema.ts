@@ -263,4 +263,12 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "JSON Minifier",
   },
+  qrCodeGenerator: {
+    name: "QR Code Generator",
+    description:
+      "Create QR codes for URLs and text in your browser. Free instant preview and PNG download—no signup.",
+    path: "/tools/qr-code-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "QR Code Generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;
