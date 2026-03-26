@@ -20,6 +20,11 @@ export function Footer({
   columns = defaultFooterColumns,
 }: FooterProps) {
   const year = new Date().getFullYear();
+  const legalLinks =
+    columns.find((c) => c.title === "Legal")?.links ?? [
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms" },
+    ];
 
   return (
     <footer className="border-t border-border bg-muted/30">
@@ -63,9 +68,28 @@ export function Footer({
         </div>
 
         <div className="mt-12 border-t border-border pt-8">
-          <p className="text-center text-sm text-muted-foreground">
-            © {year} {brandName}. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <p className="text-center text-sm text-muted-foreground">
+              © {year} {brandName}. All rights reserved.
+            </p>
+            <span className="hidden text-muted-foreground sm:inline" aria-hidden>
+              ·
+            </span>
+            <nav
+              aria-label="Legal"
+              className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm"
+            >
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
