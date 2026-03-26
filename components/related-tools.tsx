@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/tools/resize-image", label: "Resize Image" },
   { href: "/tools/crop-image", label: "Crop Image" },
   { href: "/tools/merge-pdf", label: "Merge PDF" },
+  { href: "/tools/split-pdf", label: "Split PDF" },
   { href: "/tools/png-to-jpg", label: "PNG to JPG" },
   { href: "/tools/jpg-to-png", label: "JPG to PNG" },
   { href: "/tools/json-formatter", label: "JSON Formatter" },

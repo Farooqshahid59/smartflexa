@@ -10,6 +10,7 @@ import {
   FileText,
   Files,
   Gift,
+  Split,
   ImageIcon,
   Images,
   Lock,
@@ -87,6 +88,13 @@ export const defaultTools: ToolItem[] = [
       "Combine multiple PDFs into one file with reordering—all in your browser.",
     icon: Files,
     href: "/tools/merge-pdf",
+  },
+  {
+    name: "Split PDF",
+    description:
+      "Extract page ranges or split every page into separate files—ZIP download.",
+    icon: Split,
+    href: "/tools/split-pdf",
   },
   {
     name: "PDF Tools",
@@ -253,6 +261,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "PNG to JPG", href: "/tools/png-to-jpg" },
       { name: "JPG to PNG", href: "/tools/jpg-to-png" },
       { name: "Merge PDF", href: "/tools/merge-pdf" },
+      { name: "Split PDF", href: "/tools/split-pdf" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

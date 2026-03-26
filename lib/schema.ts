@@ -172,4 +172,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Merge PDF",
   },
+  splitPdf: {
+    name: "PDF Split Tool",
+    description:
+      "Split PDF files online and extract pages easily. Free and secure PDF splitter with fast processing.",
+    path: "/tools/split-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Split PDF",
+  },
 } satisfies Record<string, ToolSchemaInput>;
