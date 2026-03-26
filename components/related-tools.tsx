@@ -5,6 +5,7 @@ const LINKS = [
   { href: "/tools/image-to-webp", label: "Image to WebP" },
   { href: "/tools/resize-image", label: "Resize Image" },
   { href: "/tools/png-to-jpg", label: "PNG to JPG" },
+  { href: "/tools/jpg-to-png", label: "JPG to PNG" },
   { href: "/tools/json-formatter", label: "JSON Formatter" },
   { href: "/tools/word-counter", label: "Word Counter" },
   { href: "/tools/base64-encoder-decoder", label: "Base64" },

@@ -66,6 +66,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/png-to-jpg",
   },
   {
+    name: "JPG to PNG",
+    description:
+      "Convert JPEG images to lossless PNG with instant preview and download.",
+    icon: FileImage,
+    href: "/tools/jpg-to-png",
+  },
+  {
     name: "PDF Tools",
     description: "Merge, split, compress, and convert PDF files quickly and securely.",
     icon: FileText,
@@ -227,6 +234,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Image to WebP", href: "/tools/image-to-webp" },
       { name: "Resize Image", href: "/tools/resize-image" },
       { name: "PNG to JPG", href: "/tools/png-to-jpg" },
+      { name: "JPG to PNG", href: "/tools/jpg-to-png" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],
