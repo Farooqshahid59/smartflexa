@@ -188,4 +188,12 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Compress PDF",
   },
+  pdfToWord: {
+    name: "PDF to Word Converter",
+    description:
+      "Convert PDF files to editable Word documents with preview and download. Free and secure tool.",
+    path: "/tools/pdf-to-word",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "PDF to Word Converter",
+  },
 } satisfies Record<string, ToolSchemaInput>;

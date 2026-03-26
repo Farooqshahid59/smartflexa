@@ -105,6 +105,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/compress-pdf",
   },
   {
+    name: "PDF to Word",
+    description:
+      "Convert PDF files to editable Word documents (placeholder conversion for now).",
+    icon: FileText,
+    href: "/tools/pdf-to-word",
+  },
+  {
     name: "PDF Tools",
     description: "Merge, split, compress, and convert PDF files quickly and securely.",
     icon: FileText,
@@ -271,6 +278,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Merge PDF", href: "/tools/merge-pdf" },
       { name: "Split PDF", href: "/tools/split-pdf" },
       { name: "Compress PDF", href: "/tools/compress-pdf" },
+      { name: "PDF to Word", href: "/tools/pdf-to-word" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },
     ],

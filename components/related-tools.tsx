@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/tools/merge-pdf", label: "Merge PDF" },
   { href: "/tools/split-pdf", label: "Split PDF" },
   { href: "/tools/compress-pdf", label: "Compress PDF" },
+  { href: "/tools/pdf-to-word", label: "PDF to Word" },
   { href: "/tools/png-to-jpg", label: "PNG to JPG" },
   { href: "/tools/jpg-to-png", label: "JPG to PNG" },
   { href: "/tools/json-formatter", label: "JSON Formatter" },
