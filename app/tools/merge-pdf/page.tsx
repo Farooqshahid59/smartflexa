@@ -153,7 +153,8 @@ export default function MergePdfPage() {
     setMergedBlob(null);
     try {
       const bytes = await mergePdfFiles(valid.map((i) => i.file));
-      setMergedBlob(new Blob([bytes], { type: "application/pdf" }));
+      const copy = Uint8Array.from(bytes);
+      setMergedBlob(new Blob([copy], { type: "application/pdf" }));
     } catch {
       setError("Merge failed. Check that PDFs are not password-protected.");
     } finally {
