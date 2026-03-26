@@ -4,6 +4,8 @@ import { useId, useState } from "react";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { JsonLd } from "@/components/json-ld";
+import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
 const EXAMPLE_TEXT = "SmartFlexa tools are fast and easy to use.";
 const EXAMPLE_ENCODED = "U21hcnRGbGV4YSB0b29scyBhcmUgZmFzdCBhbmQgZWFzeSB0byB1c2Uu";
@@ -85,6 +87,7 @@ export default function Base64EncoderDecoderPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd data={getToolPageJsonLd(toolSchemas.base64)} />
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
