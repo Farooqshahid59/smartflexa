@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { FeaturesSection } from "@/components/features-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { HomeSearchToolsSkeleton } from "@/components/home-search-tools-skeleton";
 import { HomeSearchTools } from "@/components/home-search-tools";
 import { JsonLd } from "@/components/json-ld";
 import { getWebSiteJsonLd } from "@/lib/schema";
@@ -14,7 +15,7 @@ export default function Home() {
       <JsonLd data={getWebSiteJsonLd()} />
       <Header />
       <main className="flex-1">
-        <Suspense fallback={null}>
+        <Suspense fallback={<HomeSearchToolsSkeleton />}>
           <HomeSearchTools />
         </Suspense>
         {/* Blog section paused for now

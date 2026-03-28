@@ -25,18 +25,21 @@ export function FeaturesSection({
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:items-stretch">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div key={feature.name} className="text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+              <div
+                key={feature.name}
+                className="flex min-h-[11.5rem] flex-col text-center sm:min-h-[12rem]"
+              >
+                <div className="mx-auto mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-muted">
                   <Icon className="h-7 w-7 text-foreground" aria-hidden />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
                   {feature.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 min-h-[4.5rem] flex-1 text-sm leading-relaxed text-muted-foreground">
                   {feature.description}
                 </p>
               </div>
