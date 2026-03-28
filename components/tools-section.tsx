@@ -3,7 +3,11 @@
 import { useMemo } from "react";
 
 import { ToolCard } from "@/components/tool-card";
-import { defaultTools, type ToolItem } from "@/lib/home-content";
+import {
+  defaultTools,
+  type ToolCategoryId,
+  type ToolItem,
+} from "@/lib/home-content";
 
 function matchesQuery(tool: ToolItem, raw: string): boolean {
   const q = raw.trim().toLowerCase();
@@ -23,8 +27,10 @@ export type ToolsSectionProps = {
   title?: string;
   subtitle?: string;
   tools?: ToolItem[];
-  /** When set, filters the grid by name, description, and path (live). */
   searchQuery?: string;
+  categoryId?: ToolCategoryId | null;
+  categoryLabel?: string | null;
+  onClearCategory?: () => void;
 };
 
 export function ToolsSection({
@@ -33,15 +39,26 @@ export function ToolsSection({
   subtitle = "Discover our most-used tools to boost your productivity",
   tools = defaultTools,
   searchQuery = "",
+  categoryId = null,
+  categoryLabel = null,
+  onClearCategory,
 }: ToolsSectionProps) {
   const filtered = useMemo(() => {
+    let list = tools;
+    if (categoryId) {
+      list = list.filter((t) => t.category === categoryId);
+    }
     const q = searchQuery.trim();
-    if (!q) return tools;
-    return tools.filter((t) => matchesQuery(t, q));
-  }, [tools, searchQuery]);
+    if (q) {
+      list = list.filter((t) => matchesQuery(t, q));
+    }
+    return list;
+  }, [tools, categoryId, searchQuery]);
 
   const queryTrimmed = searchQuery.trim();
-  const isFiltered = queryTrimmed.length > 0;
+  const isSearchFiltered = queryTrimmed.length > 0;
+  const isCategoryFiltered = categoryId !== null;
+  const isFiltered = isSearchFiltered || isCategoryFiltered;
 
   return (
     <section id={id} className="bg-muted/30 py-20 sm:py-24">
@@ -55,29 +72,62 @@ export function ToolsSection({
           </p>
           <p className="sr-only" aria-live="polite" aria-atomic>
             {isFiltered
-              ? `${filtered.length} tool${filtered.length === 1 ? "" : "s"} match your search.`
+              ? `${filtered.length} tool${filtered.length === 1 ? "" : "s"} shown.`
               : `${tools.length} tools listed.`}
           </p>
+
+          {isCategoryFiltered && categoryLabel ? (
+            <div className="mt-4 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3">
+              <p className="text-sm text-muted-foreground">
+                Category:{" "}
+                <span className="font-medium text-foreground">{categoryLabel}</span>
+              </p>
+              {onClearCategory ? (
+                <button
+                  type="button"
+                  onClick={onClearCategory}
+                  className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  Show all tools
+                </button>
+              ) : null}
+            </div>
+          ) : null}
+
           {isFiltered ? (
             <p className="mt-3 text-sm text-muted-foreground" aria-hidden>
               Showing {filtered.length} of {tools.length} tools
-              {filtered.length === 0
-                ? ` for “${queryTrimmed}”`
-                : ` matching “${queryTrimmed}”`}
+              {isSearchFiltered ? ` matching “${queryTrimmed}”` : ""}
+              {isCategoryFiltered && isSearchFiltered
+                ? ` in ${categoryLabel ?? "this category"}`
+                : ""}
             </p>
           ) : null}
         </div>
 
         {filtered.length === 0 ? (
           <p className="mx-auto mt-12 max-w-md text-center text-base text-muted-foreground">
-            No tools match{" "}
-            <span className="font-medium text-foreground">“{queryTrimmed}”</span>.
-            Try a shorter keyword or clear the search box above.
+            No tools match your filters.
+            {isCategoryFiltered && onClearCategory ? (
+              <>
+                {" "}
+                <button
+                  type="button"
+                  onClick={onClearCategory}
+                  className="font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  Show all tools
+                </button>
+                {isSearchFiltered ? " or adjust your search." : "."}
+              </>
+            ) : isSearchFiltered ? (
+              <> Try a different search.</>
+            ) : null}
           </p>
         ) : (
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {filtered.map((tool) => (
-              <ToolCard key={tool.href} {...tool} />
+            {filtered.map(({ category: _category, ...card }) => (
+              <ToolCard key={card.href} {...card} />
             ))}
           </div>
         )}

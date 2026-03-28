@@ -1,5 +1,6 @@
-import { BlogSection } from "@/components/blog-section";
-import { CategoriesSection } from "@/components/categories-section";
+import { Suspense } from "react";
+
+// import { BlogSection } from "@/components/blog-section";
 import { FeaturesSection } from "@/components/features-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -13,9 +14,12 @@ export default function Home() {
       <JsonLd data={getWebSiteJsonLd()} />
       <Header />
       <main className="flex-1">
-        <HomeSearchTools />
-        <CategoriesSection />
+        <Suspense fallback={null}>
+          <HomeSearchTools />
+        </Suspense>
+        {/* Blog section paused for now
         <BlogSection />
+        */}
         <FeaturesSection />
       </main>
       <Footer />
