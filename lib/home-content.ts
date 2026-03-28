@@ -1,13 +1,18 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Activity,
   ALargeSmall,
   Braces,
+  Cake,
+  Clock,
   Calculator,
   Code,
+  Binary,
   Globe,
   QrCode,
   Link2,
   Code2,
+  Hash,
   Crop,
   FileImage,
   FileJson,
@@ -15,14 +20,18 @@ import {
   FileText,
   Files,
   Gift,
+  Landmark,
+  Ruler,
   Split,
   ImageIcon,
   Images,
   Lock,
   Minimize2,
+  Percent,
   Palette,
   ShieldCheck,
   TextQuote,
+  Dice5,
   UserX,
   Zap,
 } from "lucide-react";
@@ -55,6 +64,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/json-minifier",
   },
   {
+    name: "UUID Generator",
+    description:
+      "Create version 4 UUIDs in bulk—copy-ready for APIs, DB keys, and tests.",
+    icon: Hash,
+    href: "/tools/uuid-generator",
+  },
+  {
     name: "HTML to Text",
     description:
       "Strip HTML tags and decode entities to clean plain text in your browser.",
@@ -69,11 +85,60 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/lorem-ipsum-generator",
   },
   {
+    name: "Random Number Generator",
+    description:
+      "Pick integers in any range with optional batch draws—great for games and tests.",
+    icon: Dice5,
+    href: "/tools/random-number-generator",
+  },
+  {
+    name: "Percentage Calculator",
+    description:
+      "Find percent of a number, increase/decrease between values, and percentage difference.",
+    icon: Calculator,
+    href: "/tools/percentage-calculator",
+  },
+  {
+    name: "Age Calculator",
+    description:
+      "Years, months, days, and total days from date of birth—with leap years handled.",
+    icon: Cake,
+    href: "/tools/age-calculator",
+  },
+  {
+    name: "EMI Calculator",
+    description:
+      "Monthly EMI, total interest, and total payment from principal, rate, and tenure.",
+    icon: Landmark,
+    href: "/tools/emi-calculator",
+  },
+  {
+    name: "Discount Calculator",
+    description:
+      "Percent-off savings and final price from original price and discount %.",
+    icon: Percent,
+    href: "/tools/discount-calculator",
+  },
+  {
+    name: "BMI Calculator",
+    description:
+      "Body Mass Index from weight (kg) and height (cm or m) with category labels.",
+    icon: Activity,
+    href: "/tools/bmi-calculator",
+  },
+  {
     name: "Image Compressor",
     description:
       "Compress images without losing quality. Supports PNG, JPG, and WebP.",
     icon: ImageIcon,
     href: "/tools/image-compressor",
+  },
+  {
+    name: "Image to Base64",
+    description:
+      "Turn JPG, PNG, or WebP into a data URL with preview and one-click copy.",
+    icon: Binary,
+    href: "/tools/image-to-base64",
   },
   {
     name: "Image to WebP",
@@ -194,10 +259,11 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/base64-encoder-decoder",
   },
   {
-    name: "Color Converter",
-    description: "Convert colors between HEX, RGB, HSL, and other formats.",
+    name: "Color Picker",
+    description:
+      "Pick colors with a native picker and convert HEX ↔ RGB with validation and copy.",
     icon: Palette,
-    href: "/tools/color-converter",
+    href: "/tools/color-picker",
   },
   {
     name: "Password Generator",
@@ -207,10 +273,18 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/password-generator",
   },
   {
-    name: "Unit Calculator",
-    description: "Convert between different units of measurement easily.",
-    icon: Calculator,
-    href: "/tools/unit-calculator",
+    name: "Unit Converter",
+    description:
+      "Length, weight, temperature, and speed—live conversion with swap and reset.",
+    icon: Ruler,
+    href: "/tools/unit-converter",
+  },
+  {
+    name: "Time Zone Converter",
+    description:
+      "DST-aware conversion between world time zones with live “now” in each zone.",
+    icon: Clock,
+    href: "/tools/time-zone-converter",
   },
   {
     name: "CSV to JSON",
@@ -339,9 +413,20 @@ export const defaultFooterColumns: FooterColumn[] = [
     links: [
       { name: "JSON Formatter", href: "/tools/json-formatter" },
       { name: "JSON Minifier", href: "/tools/json-minifier" },
+      { name: "UUID Generator", href: "/tools/uuid-generator" },
+      { name: "Color Picker", href: "/tools/color-picker" },
       { name: "HTML to Text", href: "/tools/html-to-text" },
       { name: "Lorem Ipsum Generator", href: "/tools/lorem-ipsum-generator" },
+      { name: "Random Number Generator", href: "/tools/random-number-generator" },
+      { name: "Percentage Calculator", href: "/tools/percentage-calculator" },
+      { name: "Age Calculator", href: "/tools/age-calculator" },
+      { name: "EMI Calculator", href: "/tools/emi-calculator" },
+      { name: "Discount Calculator", href: "/tools/discount-calculator" },
+      { name: "BMI Calculator", href: "/tools/bmi-calculator" },
+      { name: "Unit Converter", href: "/tools/unit-converter" },
+      { name: "Time Zone Converter", href: "/tools/time-zone-converter" },
       { name: "Base64 Encoder & Decoder", href: "/tools/base64-encoder-decoder" },
+      { name: "Image to Base64", href: "/tools/image-to-base64" },
       { name: "Image Compressor", href: "/tools/image-compressor" },
       { name: "Image to WebP", href: "/tools/image-to-webp" },
       { name: "Resize Image", href: "/tools/resize-image" },

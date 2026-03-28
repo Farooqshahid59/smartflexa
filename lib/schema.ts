@@ -28,7 +28,9 @@ export function getWebSiteJsonLd(): Record<string, unknown> {
 type ToolCategory =
   | "DeveloperApplication"
   | "UtilityApplication"
-  | "SecurityApplication";
+  | "SecurityApplication"
+  | "FinancialApplication"
+  | "HealthApplication";
 
 export type ToolSchemaInput = {
   name: string;
@@ -278,5 +280,93 @@ export const toolSchemas = {
     path: "/tools/lorem-ipsum-generator",
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Lorem Ipsum Generator",
+  },
+  randomNumberGenerator: {
+    name: "Random Number Generator",
+    description:
+      "Generate random integers in a range with optional batch count. Free, fast, and runs in your browser.",
+    path: "/tools/random-number-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Random Number Generator",
+  },
+  uuidGenerator: {
+    name: "UUID Generator",
+    description:
+      "Generate RFC 4122 version 4 UUIDs in your browser. Batch copy for APIs, databases, and testing—free and secure.",
+    path: "/tools/uuid-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "UUID Generator",
+  },
+  colorPicker: {
+    name: "Color Picker Tool",
+    description:
+      "Pick colors and convert HEX to RGB instantly in your browser. Free online color picker and converter for developers and designers.",
+    path: "/tools/color-picker",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Color Picker",
+  },
+  percentageCalculator: {
+    name: "Percentage Calculator",
+    description:
+      "Calculate percentages, percent increase and decrease, and percentage difference between two values. Free online calculator—runs in your browser.",
+    path: "/tools/percentage-calculator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Percentage Calculator",
+  },
+  ageCalculator: {
+    name: "Age Calculator",
+    description:
+      "Calculate age in years, months, and days from date of birth. Free online age calculator with total days lived—runs in your browser.",
+    path: "/tools/age-calculator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Age Calculator",
+  },
+  emiCalculator: {
+    name: "EMI Calculator",
+    description:
+      "Calculate loan EMI, total interest, and total payment from principal, annual rate, and tenure. Free online EMI calculator for planning—runs in your browser.",
+    path: "/tools/emi-calculator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "EMI Calculator",
+  },
+  bmiCalculator: {
+    name: "BMI Calculator",
+    description:
+      "Calculate Body Mass Index (BMI) from weight and height with category guidance. Free online BMI calculator—runs in your browser; not medical advice.",
+    path: "/tools/bmi-calculator",
+    applicationCategory: "HealthApplication" as const,
+    breadcrumbName: "BMI Calculator",
+  },
+  unitConverter: {
+    name: "Unit Converter",
+    description:
+      "Convert length, weight, temperature, and speed between common units. Free online unit converter—runs in your browser.",
+    path: "/tools/unit-converter",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Unit Converter",
+  },
+  discountCalculator: {
+    name: "Discount Calculator",
+    description:
+      "Calculate discount amount and final price from original price and percent off. Free online discount calculator—runs in your browser.",
+    path: "/tools/discount-calculator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Discount Calculator",
+  },
+  timeZoneConverter: {
+    name: "Time Zone Converter",
+    description:
+      "Convert date and time between IANA time zones with DST-aware results. Free online time zone converter—runs in your browser.",
+    path: "/tools/time-zone-converter",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Time Zone Converter",
+  },
+  imageToBase64: {
+    name: "Image to Base64 Converter",
+    description:
+      "Encode JPG, PNG, and WebP images to Base64 data URLs with preview and copy. Free online tool—runs in your browser.",
+    path: "/tools/image-to-base64",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Image to Base64 Converter",
   },
 } satisfies Record<string, ToolSchemaInput>;
