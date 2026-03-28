@@ -10,6 +10,7 @@ import {
   Binary,
   Globe,
   QrCode,
+  ScanQrCode,
   Link2,
   Code2,
   Hash,
@@ -246,6 +247,13 @@ export const defaultTools: ToolItem[] = [
     href: "/tools/qr-code-generator",
   },
   {
+    name: "QR Code Scanner",
+    description:
+      "Camera or image upload—scan QR codes in the browser with tappable URLs.",
+    icon: ScanQrCode,
+    href: "/tools/qr-code-scanner",
+  },
+  {
     name: "PDF Tools",
     description: "Merge, split, compress, and convert PDF files quickly and securely.",
     icon: FileText,
@@ -443,6 +451,7 @@ export const defaultFooterColumns: FooterColumn[] = [
       { name: "Slug Generator", href: "/tools/slug-generator" },
       { name: "URL Encoder & Decoder", href: "/tools/url-encoder-decoder" },
       { name: "QR Code Generator", href: "/tools/qr-code-generator" },
+      { name: "QR Code Scanner", href: "/tools/qr-code-scanner" },
       { name: "Password Generator", href: "/tools/password-generator" },
       { name: "PDF Tools", href: "/tools/pdf-tools" },
       { name: "All Tools", href: "/tools" },

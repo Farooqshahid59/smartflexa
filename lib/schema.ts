@@ -369,4 +369,12 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Image to Base64 Converter",
   },
+  qrCodeScanner: {
+    name: "QR Code Scanner",
+    description:
+      "Scan QR codes with your camera or from an uploaded image. Free online QR scanner—decoding runs in your browser.",
+    path: "/tools/qr-code-scanner",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "QR Code Scanner",
+  },
 } satisfies Record<string, ToolSchemaInput>;

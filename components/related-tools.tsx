@@ -16,6 +16,7 @@ const LINKS = [
   { href: "/tools/slug-generator", label: "Slug Generator" },
   { href: "/tools/url-encoder-decoder", label: "URL Encoder" },
   { href: "/tools/qr-code-generator", label: "QR Code Generator" },
+  { href: "/tools/qr-code-scanner", label: "QR Code Scanner" },
   { href: "/tools/password-generator", label: "Password Generator" },
   { href: "/tools/random-number-generator", label: "Random Number Generator" },
   { href: "/tools/percentage-calculator", label: "Percentage Calculator" },
