@@ -2,7 +2,7 @@
 
 import { Search } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { FormEvent } from "react";
 
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +11,9 @@ export type HeroSectionProps = {
   description?: string;
   searchPlaceholder?: string;
   browseHref?: string;
+  searchQuery: string;
+  onSearchChange: (value: string) => void;
+  toolsSectionId?: string;
 };
 
 export function HeroSection({
@@ -18,8 +21,21 @@ export function HeroSection({
   description = "Free online tools for developers, creators, and everyday users. No signup required.",
   searchPlaceholder = "Search tools...",
   browseHref = "#tools",
+  searchQuery,
+  onSearchChange,
+  toolsSectionId = "tools",
 }: HeroSectionProps) {
-  const [searchQuery, setSearchQuery] = useState("");
+  const scrollToTools = () => {
+    document.getElementById(toolsSectionId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const onSearchSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    scrollToTools();
+  };
 
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-28 lg:py-32">
@@ -32,7 +48,12 @@ export function HeroSection({
             {description}
           </p>
 
-          <div className="mx-auto mt-10 max-w-xl">
+          <form
+            className="mx-auto mt-10 max-w-xl"
+            role="search"
+            aria-label="Search tools"
+            onSubmit={onSearchSubmit}
+          >
             <div className="relative">
               <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <input
@@ -40,15 +61,32 @@ export function HeroSection({
                 name="hero-search"
                 placeholder={searchPlaceholder}
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => onSearchChange(e.target.value)}
+                autoComplete="off"
+                aria-controls={toolsSectionId}
                 className="h-14 w-full rounded-xl border border-input bg-background pl-12 pr-4 text-base text-foreground shadow-sm transition-shadow placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               />
             </div>
-          </div>
+            <p className="mt-2 text-center text-xs text-muted-foreground sm:text-left">
+              Filters the tools below as you type. Press Enter to scroll to the list.
+            </p>
+          </form>
 
           <div className="mt-8">
             <Button size="lg" className="h-12 px-8 text-base" asChild>
-              <Link href={browseHref}>Browse Tools</Link>
+              <Link
+                href={browseHref}
+                scroll={false}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToTools();
+                  if (typeof window !== "undefined" && browseHref.startsWith("#")) {
+                    window.history.replaceState(null, "", browseHref);
+                  }
+                }}
+              >
+                Browse Tools
+              </Link>
             </Button>
           </div>
         </div>
