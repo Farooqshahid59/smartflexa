@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/unit-converter",
+    canonical: "https://www.smartflexa.com/tools/unit-converter",
   },
   keywords: [
     "unit converter",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/unit-converter",
+    url: "https://www.smartflexa.com/tools/unit-converter",
   },
   twitter: {
     card: "summary",

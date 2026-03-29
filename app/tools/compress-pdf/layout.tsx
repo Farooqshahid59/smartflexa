@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/compress-pdf",
+    canonical: "https://www.smartflexa.com/tools/compress-pdf",
   },
   openGraph: {
     title,

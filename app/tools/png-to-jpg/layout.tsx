@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/png-to-jpg",
+    canonical: "https://www.smartflexa.com/tools/png-to-jpg",
   },
   openGraph: {
     title,

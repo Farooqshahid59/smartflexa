@@ -1,7 +1,7 @@
 import { siteUrl } from "@/lib/site";
 
-/** Public site URL without www (matches WebSite / SEO requirements). */
-export const siteUrlBare = "https://smartflexa.com" as const;
+/** Alias for structured data (same host as `siteUrl`). */
+export const siteUrlBare = siteUrl;
 
 const freeOffer = {
   "@type": "Offer" as const,

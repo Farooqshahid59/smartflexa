@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/percentage-calculator",
+    canonical: "https://www.smartflexa.com/tools/percentage-calculator",
   },
   keywords: [
     "percentage calculator",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/percentage-calculator",
+    url: "https://www.smartflexa.com/tools/percentage-calculator",
   },
   twitter: {
     card: "summary",

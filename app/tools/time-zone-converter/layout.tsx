@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/time-zone-converter",
+    canonical: "https://www.smartflexa.com/tools/time-zone-converter",
   },
   keywords: [
     "time zone converter",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/time-zone-converter",
+    url: "https://www.smartflexa.com/tools/time-zone-converter",
   },
   twitter: {
     card: "summary",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/image-compressor",
+    canonical: "https://www.smartflexa.com/tools/image-compressor",
   },
   openGraph: {
     title,

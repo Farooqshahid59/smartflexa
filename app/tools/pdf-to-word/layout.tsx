@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/pdf-to-word",
+    canonical: "https://www.smartflexa.com/tools/pdf-to-word",
   },
   openGraph: {
     title,

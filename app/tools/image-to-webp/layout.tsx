@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/image-to-webp",
+    canonical: "https://www.smartflexa.com/tools/image-to-webp",
   },
   openGraph: {
     title,

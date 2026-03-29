@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/emi-calculator",
+    canonical: "https://www.smartflexa.com/tools/emi-calculator",
   },
   keywords: [
     "EMI calculator",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/emi-calculator",
+    url: "https://www.smartflexa.com/tools/emi-calculator",
   },
   twitter: {
     card: "summary",

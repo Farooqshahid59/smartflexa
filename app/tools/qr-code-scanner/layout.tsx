@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/qr-code-scanner",
+    canonical: "https://www.smartflexa.com/tools/qr-code-scanner",
   },
   keywords: [
     "QR code scanner",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/qr-code-scanner",
+    url: "https://www.smartflexa.com/tools/qr-code-scanner",
   },
   twitter: {
     card: "summary",

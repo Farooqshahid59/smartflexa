@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/image-to-base64",
+    canonical: "https://www.smartflexa.com/tools/image-to-base64",
   },
   keywords: [
     "image to base64",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/image-to-base64",
+    url: "https://www.smartflexa.com/tools/image-to-base64",
   },
   twitter: {
     card: "summary",

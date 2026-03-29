@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/age-calculator",
+    canonical: "https://www.smartflexa.com/tools/age-calculator",
   },
   keywords: [
     "age calculator",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/age-calculator",
+    url: "https://www.smartflexa.com/tools/age-calculator",
   },
   twitter: {
     card: "summary",

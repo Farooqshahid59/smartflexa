@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/base64-encoder-decoder",
+    canonical: "https://www.smartflexa.com/tools/base64-encoder-decoder",
   },
   openGraph: {
     title,

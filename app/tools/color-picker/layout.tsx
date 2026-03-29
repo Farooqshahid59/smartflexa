@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/color-picker",
+    canonical: "https://www.smartflexa.com/tools/color-picker",
   },
   keywords: [
     "color picker",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "https://smartflexa.com/tools/color-picker",
+    url: "https://www.smartflexa.com/tools/color-picker",
   },
   twitter: {
     card: "summary",

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { siteUrl } from "@/lib/site";
+
 const title = "JSON Formatter";
 const description =
   "Free online JSON formatter and validator for SmartFlexa. Pretty-print JSON with 2-space indentation, fix errors, and copy formatted output — runs in your browser.";
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "/tools/json-formatter",
+    canonical: `${siteUrl}/tools/json-formatter`,
   },
   keywords: [
     "JSON formatter",
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     siteName: "SmartFlexa",
-    url: "/tools/json-formatter",
+    url: `${siteUrl}/tools/json-formatter`,
   },
   twitter: {
     card: "summary",

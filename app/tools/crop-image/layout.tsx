@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description,
   alternates: {
-    canonical: "https://smartflexa.com/tools/crop-image",
+    canonical: "https://www.smartflexa.com/tools/crop-image",
   },
   openGraph: {
     title,
