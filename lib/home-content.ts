@@ -485,7 +485,7 @@ export type NavLink = { label: string; href: string };
 export const defaultNavLinks: NavLink[] = [
   { label: "Tools", href: "#tools" },
   // { label: "Blog", href: "#blog" }, // paused: no blog block on home for now
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
 ];
 
 export type FooterColumn = { title: string; links: { name: string; href: string }[] };
