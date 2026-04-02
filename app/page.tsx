@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 
 // import { BlogSection } from "@/components/blog-section";
@@ -8,6 +9,13 @@ import { HomeSearchToolsSkeleton } from "@/components/home-search-tools-skeleton
 import { HomeSearchTools } from "@/components/home-search-tools";
 import { JsonLd } from "@/components/json-ld";
 import { getWebSiteJsonLd } from "@/lib/schema";
+import { siteUrl } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: siteUrl,
+  },
+};
 
 export default function Home() {
   return (
