@@ -483,7 +483,7 @@ export const defaultFeatures: FeatureItem[] = [
 export type NavLink = { label: string; href: string };
 
 export const defaultNavLinks: NavLink[] = [
-  { label: "Tools", href: "#tools" },
+  { label: "Tools", href: "/#tools" },
   // { label: "Blog", href: "#blog" }, // paused: no blog block on home for now
   { label: "About", href: "/about" },
 ];
