@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { MetaTagInboundLinks } from "@/components/meta-tag-inbound-links";
+import { RobotsTxtInboundLinks } from "@/components/robots-txt-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -329,6 +330,7 @@ export default function UrlEncoderDecoderPage() {
             </dl>
 
             <MetaTagInboundLinks />
+            <RobotsTxtInboundLinks />
             <RelatedTools currentPath="/tools/url-encoder-decoder" heading="More tools" />
           </article>
         </div>

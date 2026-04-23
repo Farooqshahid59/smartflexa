@@ -569,4 +569,44 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "HTML meta tags generator",
   },
+  robotsTxtGenerator: {
+    name: "Robots.txt Generator Free (Create SEO Robots File Instantly)",
+    description:
+      "Generate robots.txt for your website: User-agent, Allow/Disallow paths, optional Crawl-delay, Sitemap URLs. Presets, live preview, copy and download—client-side.",
+    path: "/tools/robots-txt-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Robots.txt Generator",
+  },
+  createRobotsTxt: {
+    name: "Create robots.txt — Crawl Rules & Sitemap Lines",
+    description:
+      "Create robots.txt online with Allow/Disallow groups, crawl-delay, and sitemap entries. Free SmartFlexa editor with copy and .txt download.",
+    path: "/create-robots-txt",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Create robots.txt",
+  },
+  robotsTxtGeneratorOnline: {
+    name: "Robots.txt Generator Online — Browser-Only Builder",
+    description:
+      "Robots.txt generator online: edit paths in real time, apply presets, export robots.txt without uploading your site to a server.",
+    path: "/robots-txt-generator-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Robots.txt generator online",
+  },
+  robotsTxtForSeo: {
+    name: "Robots.txt for SEO — Control Crawling & Duplicates",
+    description:
+      "Learn how robots.txt for SEO fits with sitemaps and meta robots. Build rules, preview output, and download a clean robots.txt file.",
+    path: "/robots-txt-for-seo",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Robots.txt for SEO",
+  },
+  howToCreateRobotsTxt: {
+    name: "How to Create robots.txt — Step-by-Step File Builder",
+    description:
+      "How to create robots.txt: user-agent blocks, allow/disallow paths, sitemaps, and validation tips. Same SmartFlexa generator with focused guidance.",
+    path: "/how-to-create-robots-txt",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "How to create robots.txt",
+  },
 } satisfies Record<string, ToolSchemaInput>;

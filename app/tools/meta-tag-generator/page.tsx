@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { MetaTagRelatedToolLinks } from "@/components/meta-tag-related-tool-links";
+import { RobotsTxtInboundLinks } from "@/components/robots-txt-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -244,6 +245,7 @@ export default function MetaTagGeneratorPage() {
 
           <div className="mt-14 space-y-10">
             <MetaTagRelatedToolLinks />
+            <RobotsTxtInboundLinks />
             <RelatedTools currentPath="/tools/meta-tag-generator" heading="More tools" />
           </div>
         </div>

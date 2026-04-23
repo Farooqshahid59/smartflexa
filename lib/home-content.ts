@@ -8,6 +8,7 @@ import {
   Calculator,
   Code,
   Binary,
+  Bot,
   Globe,
   QrCode,
   ScanQrCode,
@@ -103,6 +104,13 @@ export const defaultTools: ToolItem[] = [
     description: "Generate SEO meta tags for your website instantly.",
     icon: Tags,
     href: "/tools/meta-tag-generator",
+    category: "developer",
+  },
+  {
+    name: "Robots.txt Generator",
+    description: "Create robots.txt file for SEO and control crawling.",
+    icon: Bot,
+    href: "/tools/robots-txt-generator",
     category: "developer",
   },
   {
