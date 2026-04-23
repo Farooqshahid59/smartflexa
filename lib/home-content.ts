@@ -28,6 +28,7 @@ import {
   ImageIcon,
   Images,
   Lock,
+  MapPin,
   PenLine,
   Minimize2,
   Percent,
@@ -77,6 +78,14 @@ export const defaultTools: ToolItem[] = [
       "Create version 4 UUIDs in bulk—copy-ready for APIs, DB keys, and tests.",
     icon: Hash,
     href: "/tools/uuid-generator",
+    category: "developer",
+  },
+  {
+    name: "Fake Address Generator",
+    description:
+      "Generate random addresses for testing and development.",
+    icon: MapPin,
+    href: "/tools/fake-address-generator",
     category: "developer",
   },
   {

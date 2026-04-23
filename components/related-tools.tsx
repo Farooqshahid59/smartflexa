@@ -33,6 +33,7 @@ const LINKS = [
   { href: "/tools/json-formatter", label: "JSON Formatter" },
   { href: "/tools/color-picker", label: "Color Picker" },
   { href: "/tools/uuid-generator", label: "UUID Generator" },
+  { href: "/tools/fake-address-generator", label: "Fake Address Generator" },
   { href: "/tools/json-minifier", label: "JSON Minifier" },
   { href: "/tools/html-to-text", label: "HTML to Text" },
   { href: "/tools/word-counter", label: "Word Counter" },

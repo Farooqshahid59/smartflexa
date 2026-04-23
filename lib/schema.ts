@@ -449,4 +449,44 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Digital signature generator",
   },
+  fakeAddressGenerator: {
+    name: "Fake Address Generator Online (Random US, UK, India Addresses)",
+    description:
+      "Generate random fake addresses for testing and signup forms. Free online tool with US, UK, India, and Canada formats—copy batches in your browser.",
+    path: "/tools/fake-address-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Fake Address Generator",
+  },
+  fakeAddressGeneratorUs: {
+    name: "Fake US Address Generator — Random American Test Data",
+    description:
+      "Generate random US-style addresses for QA: names, streets, cities, states, ZIP codes, and phone patterns. Client-side only—never for fraud or misrepresentation.",
+    path: "/fake-address-generator-us",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Fake US address generator",
+  },
+  fakeAddressGeneratorUk: {
+    name: "Fake UK Address Generator — Postcode & County Test Data",
+    description:
+      "Random UK-style addresses for forms and fixtures: counties, cities, postcodes, and phone patterns. Free browser tool for developers and testers.",
+    path: "/fake-address-generator-uk",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Fake UK address generator",
+  },
+  fakeAddressGeneratorIndia: {
+    name: "Fake India Address Generator — PIN & State Test Data",
+    description:
+      "Generate random India-format addresses with states, cities, PIN codes, and phone-style numbers for testing. Runs locally in your browser.",
+    path: "/fake-address-generator-india",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Fake India address generator",
+  },
+  randomAddressGenerator: {
+    name: "Random Address Generator — Multi-Country Test Data",
+    description:
+      "Create random addresses across US, UK, India, and Canada for demos and QA. Switch countries, batch up to five rows, copy instantly—no backend.",
+    path: "/random-address-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Random address generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;
