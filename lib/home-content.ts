@@ -14,6 +14,7 @@ import {
   Link2,
   Code2,
   Hash,
+  IdCard,
   Crop,
   FileImage,
   FileJson,
@@ -179,6 +180,14 @@ export const defaultTools: ToolItem[] = [
       "Crop images with rectangle or circle selection, preview, and instant download.",
     icon: Crop,
     href: "/tools/crop-image",
+    category: "image",
+  },
+  {
+    name: "Passport Photo Maker",
+    description:
+      "Square crop, USA / India / UK presets or custom px, white background, JPG and A4 sheet—all in the browser.",
+    icon: IdCard,
+    href: "/tools/passport-photo-maker",
     category: "image",
   },
   {

@@ -169,6 +169,46 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Crop Image",
   },
+  passportPhotoMaker: {
+    name: "Passport Size Photo Maker Online Free (2x2, Visa Photos)",
+    description:
+      "Free online passport and visa photo maker: 2×2 inch style, UK and India 35×45 mm presets, custom size, square crop, white background, JPG and optional A4 sheet—all in your browser.",
+    path: "/tools/passport-photo-maker",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Passport Photo Maker",
+  },
+  passportPhotoSizeUs: {
+    name: "US Passport Photo Size (2×2 inches) — Online Maker",
+    description:
+      "US passport photo size guide: 2×2 inch prints and common 600×600 px digital files. Crop, white background, JPG and A4 sheet in your browser—always confirm with travel.state.gov.",
+    path: "/passport-photo-size-us",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "US passport photo size",
+  },
+  passportPhotoSizeIndia: {
+    name: "India Passport Photo Size (35×45 mm) — Online Maker",
+    description:
+      "India passport photo dimensions: 35×45 mm prints and typical digital exports. Free crop-and-export tool in your browser; verify file size and rules on the official PSK portal.",
+    path: "/passport-photo-size-india",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "India passport photo size",
+  },
+  passportPhotoSizeUk: {
+    name: "UK Passport Photo Size (35×45 mm) — Online Maker",
+    description:
+      "UK passport photo size in millimetres and pixels, plain background, and how to export a JPG at home. Browser-only tool; check GOV.UK for the latest photo rules before you apply.",
+    path: "/passport-photo-size-uk",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "UK passport photo size",
+  },
+  twoByTwoPhotoMaker: {
+    name: "2×2 Photo Maker Online Free (Passport & ID)",
+    description:
+      "Make a 2 inch by 2 inch photo online: square crop, 600×600 px export, white background, JPG download and optional A4 print grid. Runs locally in your browser for US-style IDs and forms.",
+    path: "/2x2-photo-maker",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "2×2 photo maker",
+  },
   mergePdf: {
     name: "PDF Merge Tool",
     description:

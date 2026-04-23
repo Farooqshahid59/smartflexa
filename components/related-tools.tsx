@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/tools/image-to-webp", label: "Image to WebP" },
   { href: "/tools/resize-image", label: "Resize Image" },
   { href: "/tools/crop-image", label: "Crop Image" },
+  { href: "/tools/passport-photo-maker", label: "Passport Photo Maker" },
   { href: "/tools/merge-pdf", label: "Merge PDF" },
   { href: "/tools/split-pdf", label: "Split PDF" },
   { href: "/tools/compress-pdf", label: "Compress PDF" },
@@ -41,18 +42,22 @@ const LINKS = [
 export type RelatedToolsProps = {
   /** Current tool path — omitted from the list to avoid a self-link. */
   currentPath: string;
+  /** Optional section heading when a page already uses “Related tools” above. */
+  heading?: string;
 };
 
-export function RelatedTools({ currentPath }: RelatedToolsProps) {
+export function RelatedTools({ currentPath, heading = "Related tools" }: RelatedToolsProps) {
   const links = LINKS.filter((l) => l.href !== currentPath);
+  const headingId =
+    heading === "Related tools" ? "related-tools-heading" : "more-tools-heading";
 
   return (
-    <section aria-labelledby="related-tools-heading">
+    <section aria-labelledby={headingId}>
       <h2
-        id="related-tools-heading"
+        id={headingId}
         className="text-2xl font-bold tracking-tight text-foreground"
       >
-        Related tools
+        {heading}
       </h2>
       <div className="mt-4 flex flex-wrap gap-2">
         {links.map((item) => (

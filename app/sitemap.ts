@@ -19,6 +19,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${base}/passport-photo-size-us`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/passport-photo-size-india`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/passport-photo-size-uk`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/2x2-photo-maker`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
       url: `${base}/tools/json-formatter`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -68,6 +92,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/tools/crop-image`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/tools/passport-photo-maker`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,

@@ -12,6 +12,7 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { PassportWorkflowRelatedLinks } from "@/components/passport-workflow-related-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -526,7 +527,11 @@ export default function ImageCompressorPage() {
               </div>
             </dl>
 
-            <RelatedTools currentPath="/tools/image-compressor" />
+            <PassportWorkflowRelatedLinks currentPath="/tools/image-compressor" />
+            <RelatedTools
+              currentPath="/tools/image-compressor"
+              heading="More tools"
+            />
           </article>
         </div>
       </main>
