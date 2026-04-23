@@ -104,10 +104,16 @@ export async function POST(request) {
       );
     }
 
-    const hfToken = process.env.HUGGINGFACE_API_KEY;
+    const hfToken =
+      process.env.HUGGINGFACE_API_KEY ||
+      process.env.HUGGINGFACEHUB_API_TOKEN ||
+      process.env.HF_TOKEN;
     if (!hfToken) {
       return NextResponse.json(
-        { error: "Server missing HUGGINGFACE_API_KEY." },
+        {
+          error:
+            "Server missing Hugging Face API token. Set HUGGINGFACE_API_KEY (or HUGGINGFACEHUB_API_TOKEN / HF_TOKEN).",
+        },
         { status: 500 },
       );
     }
