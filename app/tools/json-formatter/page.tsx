@@ -11,6 +11,7 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { MetaTagInboundLinks } from "@/components/meta-tag-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -398,7 +399,8 @@ export default function JsonFormatterPage() {
               </div>
             </dl>
 
-            <RelatedTools currentPath="/tools/json-formatter" />
+            <MetaTagInboundLinks />
+            <RelatedTools currentPath="/tools/json-formatter" heading="More tools" />
           </article>
         </div>
       </main>

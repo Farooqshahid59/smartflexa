@@ -36,6 +36,7 @@ import {
   Palette,
   ShieldCheck,
   TextQuote,
+  Tags,
   Dice5,
   UserX,
   Zap,
@@ -95,6 +96,13 @@ export const defaultTools: ToolItem[] = [
       "Strip HTML tags and decode entities to clean plain text in your browser.",
     icon: FileCode,
     href: "/tools/html-to-text",
+    category: "developer",
+  },
+  {
+    name: "Meta Tag Generator",
+    description: "Generate SEO meta tags for your website instantly.",
+    icon: Tags,
+    href: "/tools/meta-tag-generator",
     category: "developer",
   },
   {

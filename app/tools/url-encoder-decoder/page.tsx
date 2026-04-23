@@ -5,6 +5,7 @@ import { ChangeEvent, useId, useState } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { MetaTagInboundLinks } from "@/components/meta-tag-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -327,7 +328,8 @@ export default function UrlEncoderDecoderPage() {
               </div>
             </dl>
 
-            <RelatedTools currentPath="/tools/url-encoder-decoder" />
+            <MetaTagInboundLinks />
+            <RelatedTools currentPath="/tools/url-encoder-decoder" heading="More tools" />
           </article>
         </div>
       </main>

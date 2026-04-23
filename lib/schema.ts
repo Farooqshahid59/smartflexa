@@ -529,4 +529,44 @@ export const toolSchemas = {
     applicationCategory: "FinancialApplication" as const,
     breadcrumbName: "Freelance invoice generator",
   },
+  metaTagGenerator: {
+    name: "Meta Tag Generator Free (SEO Meta Tags for Website)",
+    description:
+      "Generate SEO meta tags for your website including Open Graph and Twitter cards. Live HTML output, search snippet preview, copy to clipboard—runs in your browser.",
+    path: "/tools/meta-tag-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Meta Tag Generator",
+  },
+  seoMetaTagGenerator: {
+    name: "SEO Meta Tag Generator — Titles, Descriptions & Robots",
+    description:
+      "Free SEO meta tag generator: titles, meta descriptions, robots, viewport, and social tags with instant preview. Client-side only for SmartFlexa builders.",
+    path: "/seo-meta-tag-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "SEO meta tag generator",
+  },
+  openGraphGenerator: {
+    name: "Open Graph Generator — og:title, og:image & More",
+    description:
+      "Build Open Graph meta tags for link previews: og:title, og:description, og:image, og:type. Pair with Twitter fields in one SmartFlexa editor.",
+    path: "/open-graph-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Open Graph generator",
+  },
+  twitterCardGenerator: {
+    name: "Twitter Card Generator — twitter:title & Image Tags",
+    description:
+      "Generate Twitter Card meta tags: card type, title, description, and image URL. Free browser tool with live HTML for X and embedded previews.",
+    path: "/twitter-card-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Twitter card generator",
+  },
+  htmlMetaTagsGenerator: {
+    name: "HTML Meta Tags Generator — Paste-Ready Head Markup",
+    description:
+      "Create HTML meta tags for any page: description, keywords, author, viewport, robots, Open Graph, and Twitter. Copy clean markup instantly.",
+    path: "/html-meta-tags-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "HTML meta tags generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;

@@ -35,6 +35,7 @@ const LINKS = [
   { href: "/tools/uuid-generator", label: "UUID Generator" },
   { href: "/tools/fake-address-generator", label: "Fake Address Generator" },
   { href: "/tools/invoice-generator", label: "Invoice Generator" },
+  { href: "/tools/meta-tag-generator", label: "Meta Tag Generator" },
   { href: "/tools/json-minifier", label: "JSON Minifier" },
   { href: "/tools/html-to-text", label: "HTML to Text" },
   { href: "/tools/word-counter", label: "Word Counter" },
