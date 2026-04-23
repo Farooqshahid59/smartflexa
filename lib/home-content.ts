@@ -12,6 +12,8 @@ import {
   Globe,
   QrCode,
   ScanQrCode,
+  Share2,
+  GitCompare,
   Link2,
   Code2,
   Hash,
@@ -27,9 +29,12 @@ import {
   Ruler,
   Split,
   ImageIcon,
+  ImagePlus,
   Images,
   Lock,
+  Map,
   MapPin,
+  BarChart3,
   PenLine,
   Minimize2,
   Percent,
@@ -39,6 +44,9 @@ import {
   TextQuote,
   Tags,
   Dice5,
+  Eraser,
+  Sparkles,
+  SwatchBook,
   UserX,
   Zap,
 } from "lucide-react";
@@ -107,10 +115,31 @@ export const defaultTools: ToolItem[] = [
     category: "developer",
   },
   {
+    name: "Open Graph Preview Tool",
+    description: "Preview how your links appear on Facebook and Twitter.",
+    icon: Share2,
+    href: "/tools/open-graph-preview",
+    category: "developer",
+  },
+  {
     name: "Robots.txt Generator",
     description: "Create robots.txt file for SEO and control crawling.",
     icon: Bot,
     href: "/tools/robots-txt-generator",
+    category: "developer",
+  },
+  {
+    name: "Sitemap Generator",
+    description: "Generate XML sitemap for your website instantly.",
+    icon: Map,
+    href: "/tools/sitemap-generator",
+    category: "developer",
+  },
+  {
+    name: "Keyword Density Checker",
+    description: "Analyze keyword frequency and density for SEO.",
+    icon: BarChart3,
+    href: "/tools/keyword-density-checker",
     category: "developer",
   },
   {
@@ -127,6 +156,13 @@ export const defaultTools: ToolItem[] = [
       "Pick integers in any range with optional batch draws—great for games and tests.",
     icon: Dice5,
     href: "/tools/random-number-generator",
+    category: "calculators",
+  },
+  {
+    name: "Username Generator",
+    description: "Generate cool usernames for social media and gaming.",
+    icon: Sparkles,
+    href: "/tools/username-generator",
     category: "calculators",
   },
   {
@@ -182,6 +218,20 @@ export const defaultTools: ToolItem[] = [
       "Compress images without losing quality. Supports PNG, JPG, and WebP.",
     icon: ImageIcon,
     href: "/tools/image-compressor",
+    category: "image",
+  },
+  {
+    name: "Background Remover",
+    description: "Remove image background instantly online.",
+    icon: Eraser,
+    href: "/tools/remove-background",
+    category: "image",
+  },
+  {
+    name: "Text to Image Generator",
+    description: "Convert text into shareable images instantly.",
+    icon: ImagePlus,
+    href: "/tools/text-to-image",
     category: "image",
   },
   {
@@ -265,6 +315,13 @@ export const defaultTools: ToolItem[] = [
     category: "pdf",
   },
   {
+    name: "Image to PDF Converter",
+    description: "Convert multiple images into a single PDF file.",
+    icon: ImagePlus,
+    href: "/tools/image-to-pdf",
+    category: "pdf",
+  },
+  {
     name: "Word to PDF",
     description:
       "Convert DOC/DOCX to PDF format (placeholder conversion for now).",
@@ -281,11 +338,26 @@ export const defaultTools: ToolItem[] = [
     category: "developer",
   },
   {
+    name: "Text Diff Checker",
+    description: "Compare two texts and highlight differences instantly.",
+    icon: GitCompare,
+    href: "/tools/text-diff-checker",
+    category: "developer",
+  },
+  {
     name: "Text Case Converter",
     description:
       "Switch between uppercase, lowercase, title case, and sentence case instantly in your browser.",
     icon: ALargeSmall,
     href: "/tools/text-case-converter",
+    category: "developer",
+  },
+  {
+    name: "Case Converter (Dev)",
+    description:
+      "Convert text into camelCase, snake_case, kebab-case and more.",
+    icon: Braces,
+    href: "/tools/case-converter-dev",
     category: "developer",
   },
   {
@@ -341,6 +413,14 @@ export const defaultTools: ToolItem[] = [
       "Pick colors with a native picker and convert HEX ↔ RGB with validation and copy.",
     icon: Palette,
     href: "/tools/color-picker",
+    category: "developer",
+  },
+  {
+    name: "Color Palette Generator",
+    description:
+      "Generate color palettes or extract colors from images with HEX, RGB, locks, and exports.",
+    icon: SwatchBook,
+    href: "/tools/color-palette-generator",
     category: "developer",
   },
   {

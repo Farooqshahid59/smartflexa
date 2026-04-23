@@ -5,6 +5,7 @@ import { ChangeEvent, useId, useMemo, useState } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { DiffInboundLinks } from "@/components/diff-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -346,6 +347,7 @@ export default function RemoveDuplicateLinesPage() {
               </div>
             </dl>
 
+            <DiffInboundLinks />
             <RelatedTools currentPath="/tools/remove-duplicate-lines" />
           </article>
         </div>

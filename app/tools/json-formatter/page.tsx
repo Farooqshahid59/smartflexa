@@ -11,6 +11,8 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { CaseConverterDevInboundLinks } from "@/components/case-converter-dev-inbound-links";
+import { DiffInboundLinks } from "@/components/diff-inbound-links";
 import { MetaTagInboundLinks } from "@/components/meta-tag-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
@@ -400,6 +402,8 @@ export default function JsonFormatterPage() {
             </dl>
 
             <MetaTagInboundLinks />
+            <DiffInboundLinks />
+            <CaseConverterDevInboundLinks />
             <RelatedTools currentPath="/tools/json-formatter" heading="More tools" />
           </article>
         </div>

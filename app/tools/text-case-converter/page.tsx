@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
+import { CaseConverterDevInboundLinks } from "@/components/case-converter-dev-inbound-links";
 import { SignatureGeneratorInboundLinks } from "@/components/signature-generator-inbound-links";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -396,6 +397,7 @@ export default function TextCaseConverterPage() {
               </div>
             </dl>
 
+            <CaseConverterDevInboundLinks />
             <SignatureGeneratorInboundLinks />
             <RelatedTools
               currentPath="/tools/text-case-converter"

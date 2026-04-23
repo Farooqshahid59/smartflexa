@@ -5,6 +5,7 @@ import { ChangeEvent, useId, useState } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { DiffInboundLinks } from "@/components/diff-inbound-links";
 import { MetaTagInboundLinks } from "@/components/meta-tag-inbound-links";
 import { RobotsTxtInboundLinks } from "@/components/robots-txt-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
@@ -316,6 +317,7 @@ Tom & Jerry`}
 
             <MetaTagInboundLinks />
             <RobotsTxtInboundLinks />
+            <DiffInboundLinks />
             <RelatedTools currentPath="/tools/html-to-text" heading="More tools" />
           </article>
         </div>

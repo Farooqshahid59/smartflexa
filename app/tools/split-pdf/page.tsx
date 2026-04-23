@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { PDFDocument } from "pdf-lib";
 import JSZip from "jszip";
 import {
@@ -13,6 +14,7 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { ImagePdfInboundLinks } from "@/components/image-pdf-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -279,9 +281,9 @@ export default function SplitPdfPage() {
           <div className="mb-8 text-center sm:text-left">
             <nav aria-label="Breadcrumb">
               <p className="text-sm font-medium text-muted-foreground">
-                <a href="/" className="hover:text-foreground">
+                <Link href="/" className="hover:text-foreground">
                   Home
-                </a>
+                </Link>
                 <span className="mx-2 text-border" aria-hidden>
                   /
                 </span>
@@ -532,6 +534,7 @@ export default function SplitPdfPage() {
               </div>
             </dl>
 
+            <ImagePdfInboundLinks />
             <RelatedTools currentPath="/tools/split-pdf" />
           </article>
         </div>

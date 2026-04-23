@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { FakeAddressInboundLinks } from "@/components/fake-address-inbound-links";
+import { UsernameInboundLinks } from "@/components/username-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { SignatureGeneratorInboundLinks } from "@/components/signature-generator-inbound-links";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
@@ -481,6 +482,7 @@ export default function PasswordGeneratorPage() {
 
             <SignatureGeneratorInboundLinks />
             <FakeAddressInboundLinks />
+            <UsernameInboundLinks />
             <RelatedTools
               currentPath="/tools/password-generator"
               heading="More tools"

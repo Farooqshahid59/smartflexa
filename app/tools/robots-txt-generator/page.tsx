@@ -4,7 +4,10 @@ import { RobotsTxtGeneratorTool } from "@/app/tools/robots-txt-generator/robots-
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { OgPreviewInboundLinks } from "@/components/og-preview-inbound-links";
+import { KeywordDensityInboundLinks } from "@/components/keyword-density-inbound-links";
 import { RobotsTxtRelatedToolLinks } from "@/components/robots-txt-related-tool-links";
+import { SitemapInboundLinks } from "@/components/sitemap-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -244,6 +247,9 @@ export default function RobotsTxtGeneratorPage() {
 
           <div className="mt-14 space-y-10">
             <RobotsTxtRelatedToolLinks />
+            <KeywordDensityInboundLinks />
+            <OgPreviewInboundLinks />
+            <SitemapInboundLinks />
             <RelatedTools currentPath="/tools/robots-txt-generator" heading="More tools" />
           </div>
         </div>

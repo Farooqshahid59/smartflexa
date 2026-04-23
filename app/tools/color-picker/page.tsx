@@ -5,6 +5,7 @@ import { ChangeEvent, useEffect, useId, useRef, useState } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { PaletteInboundLinks } from "@/components/palette-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -471,6 +472,7 @@ export default function ColorPickerPage() {
               </div>
             </dl>
 
+            <PaletteInboundLinks />
             <RelatedTools currentPath="/tools/color-picker" />
           </article>
         </div>

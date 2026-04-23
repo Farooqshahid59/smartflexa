@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
+import { UsernameInboundLinks } from "@/components/username-inbound-links";
 import { SignatureGeneratorInboundLinks } from "@/components/signature-generator-inbound-links";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -424,6 +425,7 @@ export default function LoremIpsumGeneratorPage() {
             </dl>
 
             <SignatureGeneratorInboundLinks />
+            <UsernameInboundLinks />
             <RelatedTools
               currentPath="/tools/lorem-ipsum-generator"
               heading="More tools"

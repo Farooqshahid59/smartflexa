@@ -14,6 +14,8 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { PassportWorkflowRelatedLinks } from "@/components/passport-workflow-related-links";
+import { RemoveBgInboundLinks } from "@/components/remove-bg-inbound-links";
+import { TextToImageInboundLinks } from "@/components/text-to-image-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -554,6 +556,8 @@ export default function ResizeImagePage() {
             </dl>
 
             <PassportWorkflowRelatedLinks currentPath="/tools/resize-image" />
+            <RemoveBgInboundLinks />
+            <TextToImageInboundLinks />
             <RelatedTools currentPath="/tools/resize-image" heading="More tools" />
           </article>
         </div>

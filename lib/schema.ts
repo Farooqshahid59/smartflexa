@@ -233,6 +233,126 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "Compress PDF",
   },
+  imageToPdfConverter: {
+    name: "Image to PDF Converter Free (JPG, PNG to PDF Online)",
+    description:
+      "Convert images to PDF online for free. Merge multiple images into a single PDF instantly.",
+    path: "/tools/image-to-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Image to PDF",
+  },
+  jpgToPdf: {
+    name: "JPG to PDF — Free Online Converter",
+    description:
+      "Turn JPEG photos into a printable PDF: multi-file upload, reorder, A4 or Letter, portrait or landscape—client-side on SmartFlexa.",
+    path: "/jpg-to-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "JPG to PDF",
+  },
+  pngToPdf: {
+    name: "PNG to PDF — Lossless Pages Online",
+    description:
+      "Convert PNG screenshots and graphics into a multi-page PDF with drag-and-drop ordering and local processing.",
+    path: "/png-to-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "PNG to PDF",
+  },
+  convertImagesToPdf: {
+    name: "Convert Images to PDF — Merge JPG, PNG, WebP",
+    description:
+      "Convert images to PDF in one flow: previews, reorder, page size, orientation, download—runs in your browser.",
+    path: "/convert-images-to-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Convert images to PDF",
+  },
+  mergeImagesToPdf: {
+    name: "Merge Images to PDF — One File, Many Pages",
+    description:
+      "Merge multiple images into a single PDF document with thumbnails, arrows, and drag reorder. Free SmartFlexa tool.",
+    path: "/merge-images-to-pdf",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Merge images to PDF",
+  },
+  removeBackgroundTool: {
+    name: "Remove Background from Image Free (Online Background Remover)",
+    description:
+      "Remove image background online for free. Simple and fast background remover tool.",
+    path: "/tools/remove-background",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Remove background",
+  },
+  removeBackgroundOnline: {
+    name: "Remove Background Online — JPG & PNG, No Upload",
+    description:
+      "Remove background online in your browser: flood-fill from edges, bright threshold, or color pick—export transparent PNG.",
+    path: "/remove-background-online",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Remove background online",
+  },
+  backgroundRemoverFree: {
+    name: "Background Remover Free — Simple Photo Cutout",
+    description:
+      "Free background remover for product shots and scans: side-by-side preview, solid color fill option, PNG download on SmartFlexa.",
+    path: "/background-remover-free",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Background remover free",
+  },
+  makeImageTransparent: {
+    name: "Make Image Transparent — PNG Export",
+    description:
+      "Make image backgrounds transparent with fast canvas processing—no AI models, optional white replacement, client-side only.",
+    path: "/make-image-transparent",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Make image transparent",
+  },
+  removeWhiteBackground: {
+    name: "Remove White Background — Threshold & Edge Tools",
+    description:
+      "Remove white backgrounds from logos and photos using brightness threshold or border matching. Download PNG from SmartFlexa.",
+    path: "/remove-white-background",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Remove white background",
+  },
+  textToImageTool: {
+    name: "Text to Image Generator Free (Create Quote Images Online)",
+    description:
+      "Convert text into beautiful images. Create quote images and download instantly.",
+    path: "/tools/text-to-image",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Text to image",
+  },
+  quoteImageMaker: {
+    name: "Quote Image Maker — Typography on Canvas",
+    description:
+      "Make quote cards online: fonts, colors, padding, optional photo background—PNG or JPG download in your browser on SmartFlexa.",
+    path: "/quote-image-maker",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Quote image maker",
+  },
+  textToImageOnline: {
+    name: "Text to Image Online — Canvas Quote Graphics",
+    description:
+      "Turn text into images online with live preview, line spacing, center align, and client-side export—no server render on SmartFlexa.",
+    path: "/text-to-image-online",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Text to image online",
+  },
+  createInstagramQuoteImage: {
+    name: "Create Instagram Quote Image — 1080×1350 Preset",
+    description:
+      "Create Instagram quote images with a portrait preset, readable overlays, and instant PNG or JPG download from SmartFlexa.",
+    path: "/create-instagram-quote-image",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Instagram quote image",
+  },
+  writeTextOnImage: {
+    name: "Write Text on Image — Captions & Quotes",
+    description:
+      "Write text on image backgrounds or solid colors: multi-line layout, padding, download PNG/JPG—all local on SmartFlexa.",
+    path: "/write-text-on-image",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Write text on image",
+  },
   pdfToWord: {
     name: "PDF to Word Converter",
     description:
@@ -264,6 +384,46 @@ export const toolSchemas = {
     path: "/tools/text-case-converter",
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Text Case Converter",
+  },
+  caseConverterDev: {
+    name: "Case Converter (camelCase, snake_case, kebab-case Online)",
+    description:
+      "Convert text to camelCase, snake_case, kebab-case and more. Free developer case converter tool.",
+    path: "/tools/case-converter-dev",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Case converter (dev)",
+  },
+  camelCaseConverter: {
+    name: "camelCase Converter — JavaScript & JSON Style Names",
+    description:
+      "Convert phrases to camelCase online: live preview, copy button, optional symbol stripping—runs locally on SmartFlexa.",
+    path: "/camelcase-converter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "camelCase converter",
+  },
+  snakeCaseConverter: {
+    name: "snake_case Converter — Python & SQL Style Names",
+    description:
+      "Convert text to snake_case online: underscores, lowercase tokens, batch copy with SmartFlexa in your browser.",
+    path: "/snake-case-converter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "snake_case converter",
+  },
+  kebabCaseConverter: {
+    name: "kebab-case Converter — URLs & CSS Friendly",
+    description:
+      "Convert labels to kebab-case online: hyphenated lowercase slugs, instant copy, client-side on SmartFlexa.",
+    path: "/kebab-case-converter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "kebab-case converter",
+  },
+  pascalCaseConverter: {
+    name: "PascalCase Converter — React & C# Type Names",
+    description:
+      "Convert phrases to PascalCase online: capitalized words, no separators, copy-ready on SmartFlexa.",
+    path: "/pascal-case-converter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "PascalCase converter",
   },
   slugGenerator: {
     name: "Slug Generator Tool",
@@ -344,6 +504,46 @@ export const toolSchemas = {
     path: "/tools/color-picker",
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Color Picker",
+  },
+  colorPaletteGenerator: {
+    name: "Color Palette Generator Free (From Image & Random Colors)",
+    description:
+      "Generate beautiful color palettes or extract colors from images. Free online color palette tool.",
+    path: "/tools/color-palette-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Color Palette Generator",
+  },
+  colorPaletteFromImage: {
+    name: "Color Palette Generator from Image",
+    description:
+      "Upload a photo and extract dominant colors into a shareable palette. Free browser-based tool on SmartFlexa.",
+    path: "/color-palette-generator-from-image",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Palette from image",
+  },
+  randomColorPaletteGenerator: {
+    name: "Random Color Palette Generator",
+    description:
+      "Spin harmonious random palettes with HEX and RGB codes, lock swatches, and export JSON or CSS variables.",
+    path: "/random-color-palette-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Random palette generator",
+  },
+  hexColorPaletteGenerator: {
+    name: "HEX Color Palette Generator",
+    description:
+      "Build palettes with copy-ready HEX codes plus RGB values. Export CSS custom properties for your design system.",
+    path: "/hex-color-palette-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "HEX palette generator",
+  },
+  colorCombinationGenerator: {
+    name: "Color Combination Generator",
+    description:
+      "Explore balanced color combinations for interfaces and branding. Generate, lock, and export palettes locally.",
+    path: "/color-combination-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Color combination generator",
   },
   percentageCalculator: {
     name: "Percentage Calculator",
@@ -537,6 +737,126 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Meta Tag Generator",
   },
+  keywordDensityChecker: {
+    name: "Keyword Density Checker Free (SEO Keyword Analyzer)",
+    description:
+      "Check keyword density and frequency in your content. Free SEO keyword density tool.",
+    path: "/tools/keyword-density-checker",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Keyword density checker",
+  },
+  seoKeywordDensityChecker: {
+    name: "SEO Keyword Density Checker — Live Table & Highlights",
+    description:
+      "SEO keyword density checker with sortable frequency table, optional stop-word filter, and highlighted preview—runs locally on SmartFlexa.",
+    path: "/seo-keyword-density-checker",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "SEO keyword density checker",
+  },
+  freeKeywordDensityTool: {
+    name: "Free Keyword Density Tool — Upload .txt or Paste",
+    description:
+      "Free keyword density tool: count tokens, density percentages, filter stop words, .txt upload, mobile-friendly table on SmartFlexa.",
+    path: "/free-keyword-density-tool",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Free keyword density tool",
+  },
+  checkKeywordDensityOnline: {
+    name: "Check Keyword Density Online — Analyzer in Browser",
+    description:
+      "Check keyword density online without uploads to a server: instant stats, sort by frequency, highlight top terms on SmartFlexa.",
+    path: "/check-keyword-density-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Check keyword density online",
+  },
+  keywordAnalyzerTool: {
+    name: "Keyword Analyzer Tool — Frequency & Percentages",
+    description:
+      "Keyword analyzer tool for writers and SEOs: vocabulary size, density column, stop-word toggle—client-side on SmartFlexa.",
+    path: "/keyword-analyzer-tool",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Keyword analyzer tool",
+  },
+  openGraphPreviewTool: {
+    name: "Open Graph Preview Tool (Facebook & Twitter Link Preview)",
+    description:
+      "Preview how your website link will appear on Facebook and Twitter. Test Open Graph meta tags instantly.",
+    path: "/tools/open-graph-preview",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Open Graph Preview",
+  },
+  facebookLinkPreview: {
+    name: "Facebook Link Preview — See Your Share Card",
+    description:
+      "Visualize Facebook-style link previews from Open Graph tags. Edit title, description, and image locally on SmartFlexa.",
+    path: "/facebook-link-preview",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Facebook link preview",
+  },
+  twitterCardPreview: {
+    name: "Twitter Card Preview — X Link Appearance",
+    description:
+      "Preview summary_large_image style cards for X (Twitter): title, description, domain, and image before you post.",
+    path: "/twitter-card-preview",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Twitter card preview",
+  },
+  openGraphChecker: {
+    name: "Open Graph Checker — Validate OG Tags Visually",
+    description:
+      "Check Open Graph titles, descriptions, and images with live mockups. Optional URL fetch when CORS allows.",
+    path: "/open-graph-checker",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Open Graph checker",
+  },
+  socialSharePreviewTool: {
+    name: "Social Share Preview Tool",
+    description:
+      "Test how URLs may look when shared across social networks. Facebook and Twitter-style previews with copy-ready meta tags.",
+    path: "/social-share-preview-tool",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Social share preview",
+  },
+  textDiffChecker: {
+    name: "Text Diff Checker Online (Compare Two Texts Instantly)",
+    description:
+      "Compare two texts and find differences instantly. Free online text diff checker with highlights.",
+    path: "/tools/text-diff-checker",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Text Diff Checker",
+  },
+  compareTwoTexts: {
+    name: "Compare Two Texts — Side-by-Side Line Diff",
+    description:
+      "Compare two texts online with highlighted additions, removals, and changes. Optional .txt upload and ignore-case or whitespace modes on SmartFlexa.",
+    path: "/compare-two-texts",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Compare two texts",
+  },
+  textDifferenceChecker: {
+    name: "Text Difference Checker — Find Edits Fast",
+    description:
+      "Find differences between drafts with a line diff table, unified diff export, and local-only processing in your browser.",
+    path: "/text-difference-checker",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Text difference checker",
+  },
+  compareFilesOnline: {
+    name: "Compare Files Online — Plain Text .txt Diff",
+    description:
+      "Upload two text files and see a highlighted comparison. No server upload; SmartFlexa reads files locally with FileReader.",
+    path: "/compare-files-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Compare files online",
+  },
+  diffCheckerOnline: {
+    name: "Diff Checker Online — Line Highlights & Copy",
+    description:
+      "Online diff checker for two versions: red removals, green additions, yellow substitutions, copy-ready output—client-side.",
+    path: "/diff-checker-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Diff checker online",
+  },
   seoMetaTagGenerator: {
     name: "SEO Meta Tag Generator — Titles, Descriptions & Robots",
     description:
@@ -608,5 +928,85 @@ export const toolSchemas = {
     path: "/how-to-create-robots-txt",
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "How to create robots.txt",
+  },
+  sitemapGenerator: {
+    name: "Sitemap Generator Free (Create XML Sitemap Online)",
+    description:
+      "Generate XML sitemap for your website: URLs, changefreq, priority, optional lastmod. Bulk paste, validation, copy and download sitemap.xml—client-side.",
+    path: "/tools/sitemap-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Sitemap Generator",
+  },
+  xmlSitemapGenerator: {
+    name: "XML Sitemap Generator — urlset, loc & lastmod",
+    description:
+      "XML sitemap generator with standards-compliant urlset output, optional lastmod, and changefreq. Free SmartFlexa tool with live preview and download.",
+    path: "/xml-sitemap-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "XML sitemap generator",
+  },
+  freeSitemapGenerator: {
+    name: "Free Sitemap Generator — No Signup XML Export",
+    description:
+      "Free sitemap generator: combine site URL, manual rows, and bulk paste into sitemap.xml. Copy or download instantly in your browser.",
+    path: "/free-sitemap-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Free sitemap generator",
+  },
+  sitemapGeneratorOnline: {
+    name: "Sitemap Generator Online — Browser-Only Builder",
+    description:
+      "Sitemap generator online: build sitemap.xml without uploading your site. Edit URLs, set priority, export XML locally on SmartFlexa.",
+    path: "/sitemap-generator-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Sitemap generator online",
+  },
+  createSitemapXml: {
+    name: "Create Sitemap XML — URLs, Priority & Changefreq",
+    description:
+      "Create sitemap XML files for SEO: list loc entries, tune changefreq and priority, optional lastmod. Same editor as the main SmartFlexa sitemap generator.",
+    path: "/create-sitemap-xml",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Create sitemap XML",
+  },
+  usernameGenerator: {
+    name: "Username Generator Free (Cool, Gaming & Instagram Names)",
+    description:
+      "Generate unique usernames for Instagram, gaming, and social media. Categories, length, numbers and symbols—batch copy in your browser.",
+    path: "/tools/username-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Username Generator",
+  },
+  instagramUsernameGenerator: {
+    name: "Instagram Username Generator — Aesthetic Handles",
+    description:
+      "Instagram username generator with soft presets, optional dots and underscores, batch ideas, and copy—all client-side on SmartFlexa.",
+    path: "/instagram-username-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Instagram username generator",
+  },
+  gamingUsernameGenerator: {
+    name: "Gaming Username Generator — Gamertag Ideas",
+    description:
+      "Gaming username generator for competitive handles: edgy word pools, optional numbers, batch regenerate, copy list locally.",
+    path: "/gaming-username-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Gaming username generator",
+  },
+  coolUsernameGenerator: {
+    name: "Cool Username Generator — Stylish Screen Names",
+    description:
+      "Cool username generator with modern adjective+noun blends, length control, and optional symbols. Free batch ideas online.",
+    path: "/cool-username-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Cool username generator",
+  },
+  usernameIdeas: {
+    name: "Username Ideas — Brainstorm Handles & Tags",
+    description:
+      "Username ideas tool: generate batches for social and gaming, tweak categories, copy results. Same SmartFlexa generator with creative prompts.",
+    path: "/username-ideas",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Username ideas",
   },
 } satisfies Record<string, ToolSchemaInput>;

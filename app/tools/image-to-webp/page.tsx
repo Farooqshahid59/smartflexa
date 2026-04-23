@@ -12,6 +12,8 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { PaletteInboundLinks } from "@/components/palette-inbound-links";
+import { RemoveBgInboundLinks } from "@/components/remove-bg-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -417,6 +419,8 @@ export default function ImageToWebpPage() {
               </div>
             </dl>
 
+            <PaletteInboundLinks />
+            <RemoveBgInboundLinks />
             <RelatedTools currentPath="/tools/image-to-webp" />
           </article>
         </div>

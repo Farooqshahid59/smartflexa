@@ -12,6 +12,9 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { PaletteInboundLinks } from "@/components/palette-inbound-links";
+import { RemoveBgInboundLinks } from "@/components/remove-bg-inbound-links";
+import { TextToImageInboundLinks } from "@/components/text-to-image-inbound-links";
 import { PassportWorkflowRelatedLinks } from "@/components/passport-workflow-related-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
@@ -528,6 +531,9 @@ export default function ImageCompressorPage() {
             </dl>
 
             <PassportWorkflowRelatedLinks currentPath="/tools/image-compressor" />
+            <PaletteInboundLinks />
+            <RemoveBgInboundLinks />
+            <TextToImageInboundLinks />
             <RelatedTools
               currentPath="/tools/image-compressor"
               heading="More tools"

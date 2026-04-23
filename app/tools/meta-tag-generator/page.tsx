@@ -4,8 +4,11 @@ import { MetaTagGeneratorTool } from "@/app/tools/meta-tag-generator/meta-tag-ge
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { KeywordDensityInboundLinks } from "@/components/keyword-density-inbound-links";
 import { MetaTagRelatedToolLinks } from "@/components/meta-tag-related-tool-links";
+import { OgPreviewInboundLinks } from "@/components/og-preview-inbound-links";
 import { RobotsTxtInboundLinks } from "@/components/robots-txt-inbound-links";
+import { SitemapInboundLinks } from "@/components/sitemap-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -245,7 +248,10 @@ export default function MetaTagGeneratorPage() {
 
           <div className="mt-14 space-y-10">
             <MetaTagRelatedToolLinks />
+            <KeywordDensityInboundLinks />
+            <OgPreviewInboundLinks />
             <RobotsTxtInboundLinks />
+            <SitemapInboundLinks />
             <RelatedTools currentPath="/tools/meta-tag-generator" heading="More tools" />
           </div>
         </div>

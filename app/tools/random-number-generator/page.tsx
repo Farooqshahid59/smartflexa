@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { FakeAddressInboundLinks } from "@/components/fake-address-inbound-links";
+import { UsernameInboundLinks } from "@/components/username-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -394,6 +395,7 @@ export default function RandomNumberGeneratorPage() {
             </dl>
 
             <FakeAddressInboundLinks />
+            <UsernameInboundLinks />
             <RelatedTools
               currentPath="/tools/random-number-generator"
               heading="More tools"
