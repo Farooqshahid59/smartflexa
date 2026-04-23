@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://www.smartflexa.com/tools/time-zone-converter",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${title} | SmartFlexa`,
     description,
   },

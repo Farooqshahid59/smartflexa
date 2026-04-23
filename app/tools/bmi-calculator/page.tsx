@@ -8,6 +8,38 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
+const bmiFaqItems = [
+  {
+    q: "What is a healthy BMI range for adults?",
+    a: "For many adults, BMI between 18.5 and 24.9 is often considered in the normal range.",
+  },
+  {
+    q: "How do I calculate BMI from kg and cm?",
+    a: "Convert height from cm to meters, then use BMI = weight in kg / (height in meters × height in meters).",
+  },
+  {
+    q: "Is BMI accurate for everyone?",
+    a: "BMI is a useful screening metric, but it does not measure body fat directly and may not fit athletes, children, or pregnancy contexts.",
+  },
+  {
+    q: "Is this BMI calculator free?",
+    a: "Yes. SmartFlexa BMI calculator is free and runs in your browser.",
+  },
+] as const;
+
+const bmiFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: bmiFaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+} as const;
+
 type HeightUnit = "cm" | "m";
 
 type BmiCategory = "Underweight" | "Normal" | "Overweight" | "Obese";
@@ -110,6 +142,7 @@ export default function BmiCalculatorPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={getToolPageJsonLd(toolSchemas.bmiCalculator)} />
+      <JsonLd data={bmiFaqJsonLd} />
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
@@ -352,24 +385,61 @@ export default function BmiCalculatorPage() {
               </p>
             </div>
 
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              More BMI Examples
+            </h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-muted-foreground">
+              <li>
+                85 kg, 170 cm: BMI ≈ 29.4 (Overweight range)
+              </li>
+              <li>
+                52 kg, 165 cm: BMI ≈ 19.1 (Normal range)
+              </li>
+              <li>
+                95 kg, 180 cm: BMI ≈ 29.3 (Overweight range)
+              </li>
+            </ul>
+
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              BMI Formula (kg and cm)
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              If your height is in centimeters, convert it first:
+              <code className="mx-1 rounded bg-muted px-1 font-mono text-sm">
+                m = cm / 100
+              </code>
+              then compute:
+              <code className="mx-1 rounded bg-muted px-1 font-mono text-sm">
+                BMI = kg / m²
+              </code>
+              .
+            </p>
+
             <h2 className="text-2xl font-bold tracking-tight text-foreground">FAQ</h2>
             <dl className="mt-4 space-y-6">
               <div>
                 <dt className="font-semibold text-foreground">
-                  What is a healthy BMI?
+                  What is a healthy BMI range for adults?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  For many adults, BMI between 18.5 and 25 is often described as
-                  the normal range. Your ideal range can differ based on age,
-                  sex, ethnicity, and health—use this tool for orientation only.
+                  For many adults, BMI between 18.5 and 24.9 is commonly treated
+                  as the normal range. Use this as screening guidance, not a diagnosis.
                 </dd>
               </div>
               <div>
-                <dt className="font-semibold text-foreground">How accurate is BMI?</dt>
+                <dt className="font-semibold text-foreground">
+                  How do I calculate BMI from kg and cm?
+                </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  BMI is useful for population trends but imperfect for individuals.
-                  It can misclassify very muscular people or miss risk when weight
-                  is normal but body composition is unfavorable.
+                  Convert cm to meters and then apply BMI = kg / m². Example:
+                  175 cm = 1.75 m, so BMI = 70 / (1.75 × 1.75) ≈ 22.9.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-foreground">Is BMI accurate for everyone?</dt>
+                <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
+                  No. BMI is useful at population level but can misclassify very muscular people
+                  and is not a full health assessment for children, pregnancy, or special conditions.
                 </dd>
               </div>
               <div>

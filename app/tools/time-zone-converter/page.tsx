@@ -8,6 +8,38 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
+const timeZoneFaqItems = [
+  {
+    q: "How do I convert PST to EST quickly?",
+    a: "Set source to America/Los_Angeles (PST/PDT), target to America/New_York (EST/EDT), then enter your source date and time.",
+  },
+  {
+    q: "Does this time zone converter handle DST changes?",
+    a: "Yes. Conversion uses your browser Intl time zone database and applies daylight saving rules for the selected date.",
+  },
+  {
+    q: "Why does a selected time sometimes show an error?",
+    a: "During DST spring-forward transitions, some local clock times do not exist. Choose a nearby valid time and convert again.",
+  },
+  {
+    q: "Is this world time zone converter free?",
+    a: "Yes. SmartFlexa time zone converter is free and works directly in your browser.",
+  },
+] as const;
+
+const timeZoneFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: timeZoneFaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+} as const;
+
 const FALLBACK_TIME_ZONES = [
   "UTC",
   "Africa/Cairo",
@@ -273,6 +305,7 @@ export default function TimeZoneConverterPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={getToolPageJsonLd(toolSchemas.timeZoneConverter)} />
+      <JsonLd data={timeZoneFaqJsonLd} />
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
@@ -519,27 +552,50 @@ export default function TimeZoneConverterPage() {
               </p>
             </div>
 
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Common Conversion Examples
+            </h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-muted-foreground">
+              <li>PST to EST for US team meetings</li>
+              <li>UTC to IST for engineering handoffs</li>
+              <li>London to Dubai for client calls</li>
+            </ul>
+
             <h2 className="text-2xl font-bold tracking-tight text-foreground">FAQ</h2>
             <dl className="mt-4 space-y-6">
               <div>
                 <dt className="font-semibold text-foreground">
-                  How to convert time between countries?
+                  How do I convert PST to EST quickly?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  Pick each country’s time zone (or city zone) in the lists, enter
-                  the source local time, and read the target line. Countries with
-                  multiple zones may need a specific city entry.
+                  Set source as{" "}
+                  <code className="rounded bg-muted px-1 font-mono text-sm">
+                    America/Los_Angeles
+                  </code>{" "}
+                  and target as{" "}
+                  <code className="rounded bg-muted px-1 font-mono text-sm">
+                    America/New_York
+                  </code>
+                  , then enter source time.
                 </dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">
-                  Does this handle daylight saving?
+                  Does this time zone converter handle DST changes?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  Yes, when your browser ships up-to-date{" "}
+                  Yes. It uses browser{" "}
                   <code className="rounded bg-muted px-1 font-mono text-sm">Intl</code>{" "}
-                  time zone data. Skipped or repeated local times during DST changes
-                  may show an error so you can adjust the time.
+                  rules for daylight-saving changes on the chosen date.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-foreground">
+                  Why does a selected time sometimes show an error?
+                </dt>
+                <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
+                  Some local times do not exist during DST spring-forward changes.
+                  Pick a nearby time and convert again.
                 </dd>
               </div>
               <div>

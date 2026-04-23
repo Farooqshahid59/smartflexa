@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "/tools/text-case-converter",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${title} | SmartFlexa`,
     description,
   },

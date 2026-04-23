@@ -16,6 +16,38 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
+const imageBase64FaqItems = [
+  {
+    q: "How do I convert PNG or JPG image to Base64?",
+    a: "Upload your PNG, JPG, or WebP image and the tool instantly generates a copy-ready Base64 data URL.",
+  },
+  {
+    q: "Does Base64 reduce image quality?",
+    a: "No. Base64 encoding does not change image pixels. It only changes file representation into text.",
+  },
+  {
+    q: "Why is Base64 output larger than the original image?",
+    a: "Base64 adds encoding overhead, usually around 33% compared to binary bytes.",
+  },
+  {
+    q: "Is this image to Base64 converter free and secure?",
+    a: "Yes. SmartFlexa converter is free and processes files locally using browser APIs.",
+  },
+] as const;
+
+const imageBase64FaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: imageBase64FaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+} as const;
+
 const ACCEPT = "image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp";
 const MAX_BYTES = 15 * 1024 * 1024;
 const COPY_MS = 2500;
@@ -159,6 +191,7 @@ export default function ImageToBase64Page() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={getToolPageJsonLd(toolSchemas.imageToBase64)} />
+      <JsonLd data={imageBase64FaqJsonLd} />
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
@@ -396,25 +429,42 @@ export default function ImageToBase64Page() {
               </p>
             </div>
 
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Practical Base64 Use Cases
+            </h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-muted-foreground">
+              <li>Embed tiny logos directly in HTML email templates</li>
+              <li>Send image payloads in JSON APIs that expect Base64 strings</li>
+              <li>Use data URIs for quick UI prototypes without file hosting</li>
+            </ul>
+
             <h2 className="text-2xl font-bold tracking-tight text-foreground">FAQ</h2>
             <dl className="mt-4 space-y-6">
               <div>
                 <dt className="font-semibold text-foreground">
-                  What is Base64 used for?
+                  How do I convert PNG or JPG image to Base64?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  Safely moving binary through text-only channels: HTML/CSS
-                  embedding, JSON fields, data URIs, and some authentication
-                  flows.
+                  Upload the image file and copy the generated Base64 data URL from
+                  the output box.
                 </dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">
-                  Does Base64 increase size?
+                  Does Base64 reduce image quality?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  Yes—encoding adds roughly 33% overhead versus raw bytes, plus
-                  the short MIME prefix on a data URL.
+                  No. Encoding keeps image pixels unchanged; it only represents the
+                  same bytes as text.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-foreground">
+                  Why is Base64 output larger than the original image?
+                </dt>
+                <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
+                  Base64 adds overhead (roughly 33%), so text output is usually
+                  larger than the original binary file.
                 </dd>
               </div>
               <div>

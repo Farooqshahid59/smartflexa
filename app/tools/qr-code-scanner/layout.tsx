@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://www.smartflexa.com/tools/qr-code-scanner",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${title} | SmartFlexa`,
     description,
   },

@@ -8,6 +8,38 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
+const discountFaqItems = [
+  {
+    q: "How do I check discount on a price?",
+    a: "Enter the original price and the discount percent. The tool returns both the amount saved and the final price after discount.",
+  },
+  {
+    q: "How to calculate discount percentage from prices?",
+    a: "Use (original price - sale price) / original price × 100. This gives the percent discount.",
+  },
+  {
+    q: "How to reverse-calculate the original price after discount?",
+    a: "If sale price and discount percent are known, original price = sale price / (1 - discount percent/100).",
+  },
+  {
+    q: "Is this discount calculator free?",
+    a: "Yes. SmartFlexa discount calculator is free and works directly in your browser.",
+  },
+] as const;
+
+const discountFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: discountFaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+} as const;
+
 function parseNumber(s: string): number | null {
   const t = s.trim();
   if (t === "") return null;
@@ -80,6 +112,7 @@ export default function DiscountCalculatorPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={getToolPageJsonLd(toolSchemas.discountCalculator)} />
+      <JsonLd data={discountFaqJsonLd} />
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
@@ -286,24 +319,66 @@ export default function DiscountCalculatorPage() {
               </p>
             </div>
 
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Popular Discount Check Examples
+            </h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-muted-foreground">
+              <li>
+                25% off 2,000 = save 500, pay 1,500
+              </li>
+              <li>
+                40% off 999 = save 399.60, pay 599.40
+              </li>
+              <li>
+                12.5% off 4,800 = save 600, pay 4,200
+              </li>
+            </ul>
+
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Reverse Discount Formula
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              If you only know the sale price and percent off, calculate original
+              price as{" "}
+              <code className="rounded bg-muted px-1 font-mono text-sm">
+                sale / (1 - discount/100)
+              </code>
+              . This is useful when a store shows only discounted prices.
+            </p>
+
             <h2 className="text-2xl font-bold tracking-tight text-foreground">FAQ</h2>
             <dl className="mt-4 space-y-6">
               <div>
                 <dt className="font-semibold text-foreground">
-                  How to calculate discount percentage?
+                  How do I check discount on a price?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  Savings ÷ original price × 100 gives the percent off. This tool
-                  starts from the percent and gives savings and final price.
+                  Enter the original price and discount percentage. The tool shows
+                  both savings and final price instantly.
                 </dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">
-                  How to find final price?
+                  How to calculate discount percentage from prices?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  Final price = original price − (discount % ÷ 100 × original
-                  price). Enter both values here and tap Calculate.
+                  Use{" "}
+                  <code className="rounded bg-muted px-1 font-mono text-sm">
+                    (original - sale) / original × 100
+                  </code>
+                  . This gives the discount percentage.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-foreground">
+                  How to reverse-calculate original price after discount?
+                </dt>
+                <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
+                  Original price ={" "}
+                  <code className="rounded bg-muted px-1 font-mono text-sm">
+                    sale / (1 - discount/100)
+                  </code>
+                  . Example: 80 after 20% off means original price was 100.
                 </dd>
               </div>
               <div>

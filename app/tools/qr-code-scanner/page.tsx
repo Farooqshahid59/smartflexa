@@ -16,6 +16,38 @@ import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
+const qrScannerFaqItems = [
+  {
+    q: "Can I scan QR code from an image or screenshot?",
+    a: "Yes. Use Upload image and select a clear screenshot or photo containing the QR code.",
+  },
+  {
+    q: "Why is my QR code not scanning?",
+    a: "Try better lighting, hold the camera steady, keep the code fully visible, and avoid blurry screenshots.",
+  },
+  {
+    q: "Does this QR scanner work on mobile?",
+    a: "Yes. It works on modern mobile browsers with camera permission and HTTPS.",
+  },
+  {
+    q: "Is this QR code scanner free and secure?",
+    a: "Yes. SmartFlexa QR scanner is free and processes frames locally in your browser.",
+  },
+] as const;
+
+const qrScannerFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: qrScannerFaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+} as const;
+
 const FRAME_SKIP = 4;
 
 function toClickableHref(text: string): string | null {
@@ -252,6 +284,7 @@ export default function QrCodeScannerPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={getToolPageJsonLd(toolSchemas.qrCodeScanner)} />
+      <JsonLd data={qrScannerFaqJsonLd} />
       <a
         href="#main-content"
         className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-0 transition focus:translate-y-0 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
@@ -483,14 +516,30 @@ export default function QrCodeScannerPage() {
               </p>
             </div>
 
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Troubleshooting Scan Issues
+            </h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-relaxed text-muted-foreground">
+              <li>Increase brightness and remove glare on the QR surface</li>
+              <li>Keep the QR code centered and fully visible in the frame</li>
+              <li>Use a sharper screenshot when scanning from image uploads</li>
+            </ul>
+
             <h2 className="text-2xl font-bold tracking-tight text-foreground">FAQ</h2>
             <dl className="mt-4 space-y-6">
               <div>
                 <dt className="font-semibold text-foreground">
-                  Can I scan QR code from image?
+                  Can I scan QR code from an image or screenshot?
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
                   Yes. Use Upload image with a clear screenshot or photo of the code.
+                </dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-foreground">Why is my QR code not scanning?</dt>
+                <dd className="mt-2 text-base leading-relaxed text-muted-foreground">
+                  Improve lighting, reduce blur, keep the code centered, and try
+                  a higher quality image if uploading.
                 </dd>
               </div>
               <div>

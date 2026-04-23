@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "/tools/remove-duplicate-lines",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${title} | SmartFlexa`,
     description,
   },

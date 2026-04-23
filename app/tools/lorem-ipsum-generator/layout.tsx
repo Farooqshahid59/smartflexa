@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "/tools/lorem-ipsum-generator",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${title} | SmartFlexa`,
     description,
   },

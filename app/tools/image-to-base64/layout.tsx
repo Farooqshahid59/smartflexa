@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://www.smartflexa.com/tools/image-to-base64",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${title} | SmartFlexa`,
     description,
   },
