@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-const title = "Time Zone Converter Online Free";
+const title = "Time Zone Converter: Convert PST, EST, UTC Online Free | SmartFlexa";
 const description =
-  "Convert time between different time zones instantly. Free online time zone converter for global use.";
+  "Convert time between world time zones instantly. Free online PST/EST/UTC time zone converter with DST-aware results.";
 
 export const metadata: Metadata = {
   title,

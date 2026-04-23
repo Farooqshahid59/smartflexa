@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-const title = "Image to Base64 Converter Online Free";
+const title = "Image to Base64 Converter Online Free | PNG, JPG, WebP";
 const description =
-  "Convert images to Base64 instantly. Free online image to Base64 encoder with preview and copy option.";
+  "Convert PNG, JPG, and WebP images to Base64 instantly. Free online encoder with preview and copy-ready data URL output.";
 
 export const metadata: Metadata = {
   title,

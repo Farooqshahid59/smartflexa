@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-const title = "BMI Calculator Online Free";
+const title = "BMI Calculator Online Free | Check Body Mass Index";
 const description =
-  "Calculate your Body Mass Index (BMI) instantly. Free BMI calculator with health category insights.";
+  "Calculate your Body Mass Index (BMI) instantly with metric inputs. Free BMI calculator with category guidance.";
 
 export const metadata: Metadata = {
   title,

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-const title = "Discount Calculator Online Free";
+const title = "Discount Calculator Online Free | Percentage Off & Final Price";
 const description =
-  "Calculate discounts instantly. Find discount amount and final price with our free online discount calculator.";
+  "Calculate percentage discounts instantly. Find discount amount, savings, and final sale price with our free online calculator.";
 
 export const metadata: Metadata = {
   title,

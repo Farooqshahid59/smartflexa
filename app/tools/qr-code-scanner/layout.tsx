@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-const title = "QR Code Scanner Online Free";
+const title = "QR Code Scanner Online | Scan QR from Camera or Image Free";
 const description =
-  "Scan QR codes instantly using your camera or upload an image. Free online QR code scanner tool.";
+  "Scan QR codes instantly from your camera or uploaded screenshots. Free online QR scanner with local processing.";
 
 export const metadata: Metadata = {
   title,

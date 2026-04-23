@@ -559,6 +559,17 @@ export default function TimeZoneConverterPage() {
               </div>
             </dl>
 
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Explore Related Utility Tools
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              You can also try
+              <a href="/tools/json-formatter" className="mx-1 underline underline-offset-4 hover:text-foreground">JSON Formatter</a>,
+              <a href="/tools/percentage-calculator" className="mx-1 underline underline-offset-4 hover:text-foreground">Percentage Calculator</a>, and
+              <a href="/tools/unit-converter" className="mx-1 underline underline-offset-4 hover:text-foreground">Unit Converter</a>
+              for related workflows.
+            </p>
+
             <RelatedTools currentPath="/tools/time-zone-converter" />
           </article>
         </div>
