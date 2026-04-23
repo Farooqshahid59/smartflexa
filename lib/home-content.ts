@@ -32,6 +32,7 @@ import {
   PenLine,
   Minimize2,
   Percent,
+  Receipt,
   Palette,
   ShieldCheck,
   TextQuote,
@@ -142,6 +143,13 @@ export const defaultTools: ToolItem[] = [
       "Percent-off savings and final price from original price and discount %.",
     icon: Percent,
     href: "/tools/discount-calculator",
+    category: "calculators",
+  },
+  {
+    name: "Invoice Generator",
+    description: "Create and download professional invoices instantly.",
+    icon: Receipt,
+    href: "/tools/invoice-generator",
     category: "calculators",
   },
   {

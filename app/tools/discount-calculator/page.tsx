@@ -5,6 +5,7 @@ import { ChangeEvent, useId, useState } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { InvoiceInboundLinks } from "@/components/invoice-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -409,7 +410,8 @@ export default function DiscountCalculatorPage() {
               for related workflows.
             </p>
 
-            <RelatedTools currentPath="/tools/discount-calculator" />
+            <InvoiceInboundLinks />
+            <RelatedTools currentPath="/tools/discount-calculator" heading="More tools" />
           </article>
         </div>
       </main>

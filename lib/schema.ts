@@ -489,4 +489,44 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Random address generator",
   },
+  invoiceGenerator: {
+    name: "Free Invoice Generator Online (Create & Download PDF Invoice)",
+    description:
+      "Create professional invoices online for free. Add items, calculate totals with optional tax, preview instantly, and download PDF—all client-side.",
+    path: "/tools/invoice-generator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Invoice Generator",
+  },
+  invoiceGeneratorFree: {
+    name: "Invoice Generator Free — PDF Download in Your Browser",
+    description:
+      "Free invoice generator with line items, tax, live totals, and PDF export. No signup; runs locally in your browser for freelancers and small teams.",
+    path: "/invoice-generator-free",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Invoice generator free",
+  },
+  simpleInvoiceGenerator: {
+    name: "Simple Invoice Generator — Fast PDF Invoices",
+    description:
+      "Minimal invoice builder: seller, buyer, dates, rows, optional tax, PDF download. Ideal when you need a clean document without accounting software.",
+    path: "/simple-invoice-generator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Simple invoice generator",
+  },
+  onlineInvoiceMaker: {
+    name: "Online Invoice Maker — Create & Print Invoices",
+    description:
+      "Make invoices online with a live preview, optional sales tax, and print-friendly layout. Export PDF instantly—no server upload required.",
+    path: "/online-invoice-maker",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Online invoice maker",
+  },
+  freelanceInvoiceGenerator: {
+    name: "Freelance Invoice Generator — Hours & Fixed Fees",
+    description:
+      "Bill clients for retainers, milestones, or hourly blocks. Free freelance invoice generator with PDF download and clear totals for contracts.",
+    path: "/freelance-invoice-generator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Freelance invoice generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;
