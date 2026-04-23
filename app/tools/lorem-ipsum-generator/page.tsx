@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
+import { SignatureGeneratorInboundLinks } from "@/components/signature-generator-inbound-links";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
 const LOREM_WORDS = `
@@ -422,7 +423,11 @@ export default function LoremIpsumGeneratorPage() {
               </div>
             </dl>
 
-            <RelatedTools currentPath="/tools/lorem-ipsum-generator" />
+            <SignatureGeneratorInboundLinks />
+            <RelatedTools
+              currentPath="/tools/lorem-ipsum-generator"
+              heading="More tools"
+            />
           </article>
         </div>
       </main>

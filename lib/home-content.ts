@@ -28,6 +28,7 @@ import {
   ImageIcon,
   Images,
   Lock,
+  PenLine,
   Minimize2,
   Percent,
   Palette,
@@ -315,6 +316,14 @@ export const defaultTools: ToolItem[] = [
       "Random passwords with length control, character sets, and a live strength meter.",
     icon: Lock,
     href: "/tools/password-generator",
+    category: "developer",
+  },
+  {
+    name: "Signature Generator",
+    description:
+      "Draw or type your signature online and download instantly.",
+    icon: PenLine,
+    href: "/tools/signature-generator",
     category: "developer",
   },
   {

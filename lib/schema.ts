@@ -417,4 +417,36 @@ export const toolSchemas = {
     applicationCategory: "UtilityApplication" as const,
     breadcrumbName: "QR Code Scanner",
   },
+  signatureGenerator: {
+    name: "Signature Generator Online Free (Draw or Type Your Signature)",
+    description:
+      "Create your digital signature online for free. Draw or type your signature and download instantly as PNG with optional transparent background—all in your browser.",
+    path: "/tools/signature-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Signature Generator",
+  },
+  drawSignatureOnline: {
+    name: "Draw Signature Online Free",
+    description:
+      "Draw your signature online with mouse or touch, adjust pen thickness and color, and download a PNG. Client-side canvas—no upload to servers.",
+    path: "/draw-signature-online",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Draw signature online",
+  },
+  typeSignatureOnline: {
+    name: "Type Signature Online Free",
+    description:
+      "Type your name and pick from script-style fonts to create a signature image. Download PNG instantly in your browser.",
+    path: "/type-signature-online",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Type signature online",
+  },
+  digitalSignatureGenerator: {
+    name: "Digital Signature Generator (Image PNG)",
+    description:
+      "Generate a digital signature image online: draw or type, transparent or white background, PNG download. Runs locally—know when your workflow needs certified e-sign instead.",
+    path: "/digital-signature-generator",
+    applicationCategory: "UtilityApplication" as const,
+    breadcrumbName: "Digital signature generator",
+  },
 } satisfies Record<string, ToolSchemaInput>;

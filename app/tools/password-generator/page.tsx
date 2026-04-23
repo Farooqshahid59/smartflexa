@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
+import { SignatureGeneratorInboundLinks } from "@/components/signature-generator-inbound-links";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
 const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -477,7 +478,11 @@ export default function PasswordGeneratorPage() {
               </div>
             </dl>
 
-            <RelatedTools currentPath="/tools/password-generator" />
+            <SignatureGeneratorInboundLinks />
+            <RelatedTools
+              currentPath="/tools/password-generator"
+              heading="More tools"
+            />
           </article>
         </div>
       </main>

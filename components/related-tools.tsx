@@ -19,6 +19,7 @@ const LINKS = [
   { href: "/tools/qr-code-generator", label: "QR Code Generator" },
   { href: "/tools/qr-code-scanner", label: "QR Code Scanner" },
   { href: "/tools/password-generator", label: "Password Generator" },
+  { href: "/tools/signature-generator", label: "Signature Generator" },
   { href: "/tools/random-number-generator", label: "Random Number Generator" },
   { href: "/tools/percentage-calculator", label: "Percentage Calculator" },
   { href: "/tools/age-calculator", label: "Age Calculator" },

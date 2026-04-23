@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedTools } from "@/components/related-tools";
+import { SignatureGeneratorInboundLinks } from "@/components/signature-generator-inbound-links";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
 type CaseMode = "upper" | "lower" | "title" | "sentence";
@@ -395,7 +396,11 @@ export default function TextCaseConverterPage() {
               </div>
             </dl>
 
-            <RelatedTools currentPath="/tools/text-case-converter" />
+            <SignatureGeneratorInboundLinks />
+            <RelatedTools
+              currentPath="/tools/text-case-converter"
+              heading="More tools"
+            />
           </article>
         </div>
       </main>
