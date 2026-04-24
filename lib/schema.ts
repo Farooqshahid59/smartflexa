@@ -777,6 +777,46 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Keyword analyzer tool",
   },
+  aiTextSummarizer: {
+    name: "AI Text Summarizer Free (Summarize Articles Instantly)",
+    description:
+      "Summarize long text, articles, and content instantly using AI. Free online text summarizer.",
+    path: "/tools/ai-text-summarizer",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI text summarizer",
+  },
+  articleSummarizer: {
+    name: "Article Summarizer — AI Briefs from Long Reads",
+    description:
+      "Article summarizer powered by Hugging Face BART: short, medium, or detailed summaries with copy—via SmartFlexa.",
+    path: "/article-summarizer",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Article summarizer",
+  },
+  textSummarizerOnline: {
+    name: "Text Summarizer Online — Paste & Summarize",
+    description:
+      "Text summarizer online: compress articles and notes with length presets and instant copy on SmartFlexa.",
+    path: "/text-summarizer-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Text summarizer online",
+  },
+  aiSummaryGenerator: {
+    name: "AI Summary Generator — Fast Abstracts",
+    description:
+      "AI summary generator for blogs and reports: Hugging Face inference, responsive UI, copy-ready output on SmartFlexa.",
+    path: "/ai-summary-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI summary generator",
+  },
+  summarizeTextFree: {
+    name: "Summarize Text Free — AI Shortener",
+    description:
+      "Summarize text free online: long-form input limits, Hugging Face BART summaries, and one-click copy on SmartFlexa.",
+    path: "/summarize-text-free",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Summarize text free",
+  },
   openGraphPreviewTool: {
     name: "Open Graph Preview Tool (Facebook & Twitter Link Preview)",
     description:

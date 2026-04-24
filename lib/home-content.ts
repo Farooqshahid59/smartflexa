@@ -143,6 +143,13 @@ export const defaultTools: ToolItem[] = [
     category: "developer",
   },
   {
+    name: "AI Text Summarizer",
+    description: "Summarize long text and articles instantly.",
+    icon: Sparkles,
+    href: "/tools/ai-text-summarizer",
+    category: "developer",
+  },
+  {
     name: "Lorem Ipsum Generator",
     description:
       "Placeholder paragraphs for mockups—set paragraph count and optional word total.",

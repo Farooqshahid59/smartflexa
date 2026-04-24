@@ -511,6 +511,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.82,
     },
     {
+      url: `${base}/tools/ai-text-summarizer`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/article-summarizer`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/text-summarizer-online`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/ai-summary-generator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/summarize-text-free`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
       url: `${base}/remove-background-online`,
       lastModified: new Date(),
       changeFrequency: "monthly",

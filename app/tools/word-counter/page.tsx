@@ -5,6 +5,7 @@ import { useId, useMemo, useState } from "react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
+import { AiSummarizerInboundLinks } from "@/components/ai-summarizer-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -238,6 +239,7 @@ export default function WordCounterPage() {
               </div>
             </dl>
 
+            <AiSummarizerInboundLinks />
             <RelatedTools currentPath="/tools/word-counter" />
           </article>
         </div>

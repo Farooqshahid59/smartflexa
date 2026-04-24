@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 
+import { AiSummarizerInboundLinks } from "@/components/ai-summarizer-inbound-links";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
@@ -292,6 +293,8 @@ export default function AiDetectorPage() {
               </div>
             </dl>
           </article>
+
+          <AiSummarizerInboundLinks />
         </div>
       </main>
       <Footer />
