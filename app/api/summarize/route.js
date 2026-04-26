@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 
 const HF_MODEL = "facebook/bart-large-cnn";
-const HF_API_URL = `https://api-inference.huggingface.co/models/${HF_MODEL}`;
+const HF_API_URLS = [
+  `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`,
+  `https://api-inference.huggingface.co/models/${HF_MODEL}`,
+];
 const REQUEST_TIMEOUT_MS = 5000;
 const MIN_WORDS = 100;
 const MAX_WORDS = 2000;
@@ -24,6 +27,16 @@ function wordCount(text) {
 function cleanSummary(raw) {
   if (typeof raw !== "string") return "";
   return raw.replace(/\s+/g, " ").trim();
+}
+
+async function parseUpstreamBody(res) {
+  const text = await res.text();
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text;
+  }
 }
 
 export async function POST(request) {
@@ -79,43 +92,51 @@ export async function POST(request) {
     const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
     try {
-      const res = await fetch(HF_API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${hfToken}`,
-        },
-        body: JSON.stringify({
-          inputs: clipped,
-          parameters: {
-            max_length: params.max_length,
-            min_length: params.min_length,
+      let lastStatus = 502;
+      let lastError = "No summary returned by Hugging Face.";
+
+      for (const url of HF_API_URLS) {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${hfToken}`,
           },
-          options: { wait_for_model: false, use_cache: true },
-        }),
-        signal: controller.signal,
-      });
+          body: JSON.stringify({
+            inputs: clipped,
+            parameters: {
+              max_length: params.max_length,
+              min_length: params.min_length,
+            },
+            options: { wait_for_model: false, use_cache: true },
+          }),
+          signal: controller.signal,
+        });
 
-      const data = await res.json().catch(() => null);
+        const upstream = await parseUpstreamBody(res);
 
-      if (!res.ok) {
-        const apiError =
-          (data && (data.error || data.message)) ||
-          `Hugging Face inference failed (${res.status}).`;
-        return NextResponse.json({ error: String(apiError) }, { status: res.status });
+        if (!res.ok) {
+          lastStatus = res.status;
+          const base =
+            (upstream &&
+              typeof upstream === "object" &&
+              (upstream.error || upstream.message)) ||
+            (typeof upstream === "string" ? upstream : null) ||
+            `Hugging Face inference failed (${res.status}).`;
+          lastError = `[${url}] ${String(base)}`;
+          // Try fallback endpoint on not found.
+          if (res.status === 404) continue;
+          return NextResponse.json({ error: lastError }, { status: res.status });
+        }
+
+        const first = Array.isArray(upstream) ? upstream[0] : upstream;
+        const summary = cleanSummary(first?.summary_text || first?.generated_text || "");
+        if (summary) return NextResponse.json({ summary });
+        lastStatus = 502;
+        lastError = `[${url}] No summary returned by model.`;
       }
 
-      const first = Array.isArray(data) ? data[0] : data;
-      const summary = cleanSummary(first?.summary_text || first?.generated_text || "");
-
-      if (!summary) {
-        return NextResponse.json(
-          { error: "No summary returned by model." },
-          { status: 502 },
-        );
-      }
-
-      return NextResponse.json({ summary });
+      return NextResponse.json({ error: lastError }, { status: lastStatus });
     } finally {
       clearTimeout(timeout);
     }
