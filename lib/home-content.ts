@@ -169,6 +169,13 @@ export const defaultTools: ToolItem[] = [
     category: "ai",
   },
   {
+    name: "AI Email Writer",
+    description: "Generate professional emails and replies instantly.",
+    icon: Sparkles,
+    href: "/tools/ai-email-writer",
+    category: "ai",
+  },
+  {
     name: "Lorem Ipsum Generator",
     description:
       "Placeholder paragraphs for mockups—set paragraph count and optional word total.",

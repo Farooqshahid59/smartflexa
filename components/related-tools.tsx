@@ -46,6 +46,7 @@ const LINKS = [
   { href: "/tools/ai-text-summarizer", label: "AI Text Summarizer" },
   { href: "/tools/ai-grammar-fixer", label: "AI Grammar Fixer" },
   { href: "/tools/ai-paraphraser", label: "AI Paraphraser" },
+  { href: "/tools/ai-email-writer", label: "AI Email Writer" },
   { href: "/tools/open-graph-preview", label: "Open Graph Preview" },
   { href: "/tools/robots-txt-generator", label: "Robots.txt Generator" },
   { href: "/tools/sitemap-generator", label: "Sitemap Generator" },

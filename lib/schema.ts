@@ -897,6 +897,46 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Sentence rewriter",
   },
+  aiEmailWriter: {
+    name: "AI Email Writer Free (Generate Professional Emails Instantly)",
+    description:
+      "Write professional emails instantly using AI. Generate replies and new emails for free.",
+    path: "/tools/ai-email-writer",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI email writer",
+  },
+  aiEmailReplyGenerator: {
+    name: "AI Email Reply Generator — Draft Smart Responses",
+    description:
+      "Generate AI-powered email replies fast with adjustable tone and clear structure.",
+    path: "/ai-email-reply-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI email reply generator",
+  },
+  professionalEmailWriter: {
+    name: "Professional Email Writer — AI Business Drafts",
+    description:
+      "Write professional business emails online with AI-generated structure and tone.",
+    path: "/professional-email-writer",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Professional email writer",
+  },
+  writeEmailOnline: {
+    name: "Write Email Online — Free AI Email Draft Tool",
+    description:
+      "Write new emails online using AI context prompts for fast first drafts.",
+    path: "/write-email-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Write email online",
+  },
+  emailResponseGenerator: {
+    name: "Email Response Generator — AI Reply Assistant",
+    description:
+      "Generate clear email responses for support, sales, and operations workflows.",
+    path: "/email-response-generator",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Email response generator",
+  },
   openGraphPreviewTool: {
     name: "Open Graph Preview Tool (Facebook & Twitter Link Preview)",
     description:

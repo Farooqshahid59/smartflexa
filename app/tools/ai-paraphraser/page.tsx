@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { AiParaphraserRelatedToolLinks } from "@/components/ai-paraphraser-related-tool-links";
+import { AiEmailWriterInboundLinks } from "@/components/ai-email-writer-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -178,6 +179,7 @@ export default function AiParaphraserPage() {
 
           <div className="mt-14 space-y-10">
             <AiParaphraserRelatedToolLinks />
+            <AiEmailWriterInboundLinks />
             <RelatedTools currentPath="/tools/ai-paraphraser" heading="More tools" />
           </div>
         </div>
