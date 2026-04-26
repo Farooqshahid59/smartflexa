@@ -157,6 +157,13 @@ export const defaultTools: ToolItem[] = [
     category: "developer",
   },
   {
+    name: "AI Paraphrasing Tool",
+    description: "Rewrite text and sentences instantly using AI.",
+    icon: Sparkles,
+    href: "/tools/ai-paraphraser",
+    category: "developer",
+  },
+  {
     name: "Lorem Ipsum Generator",
     description:
       "Placeholder paragraphs for mockups—set paragraph count and optional word total.",

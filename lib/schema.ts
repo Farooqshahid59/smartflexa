@@ -857,6 +857,46 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "AI grammar correction",
   },
+  aiParaphraser: {
+    name: "AI Paraphrasing Tool Free (Rewrite Text Instantly)",
+    description:
+      "Rewrite sentences and paraphrase text instantly using AI. Free online paraphrasing tool.",
+    path: "/tools/ai-paraphraser",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI paraphrasing tool",
+  },
+  paraphrasingToolFree: {
+    name: "Paraphrasing Tool Free — AI Rewrite Assistant",
+    description:
+      "Use a free paraphrasing tool to rewrite paragraphs with clearer wording and preserved meaning.",
+    path: "/paraphrasing-tool-free",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Paraphrasing tool free",
+  },
+  rewriteTextOnline: {
+    name: "Rewrite Text Online — AI Sentence Rewriter",
+    description:
+      "Rewrite text online with AI to improve readability, flow, and tone in seconds.",
+    path: "/rewrite-text-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Rewrite text online",
+  },
+  aiRewriter: {
+    name: "AI Rewriter — Rephrase Content Fast",
+    description:
+      "AI rewriter for emails, blogs, and docs. Rephrase content quickly while keeping meaning intact.",
+    path: "/ai-rewriter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI rewriter",
+  },
+  sentenceRewriter: {
+    name: "Sentence Rewriter — Improve Clarity Instantly",
+    description:
+      "Rewrite sentences with AI for clearer structure and cleaner wording without losing context.",
+    path: "/sentence-rewriter",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Sentence rewriter",
+  },
   openGraphPreviewTool: {
     name: "Open Graph Preview Tool (Facebook & Twitter Link Preview)",
     description:

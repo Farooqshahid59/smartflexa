@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import { AiGrammarInboundLinks } from "@/components/ai-grammar-inbound-links";
 import { AiSummarizerInboundLinks } from "@/components/ai-summarizer-inbound-links";
+import { AiParaphraserInboundLinks } from "@/components/ai-paraphraser-inbound-links";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
@@ -297,6 +298,7 @@ export default function AiDetectorPage() {
 
           <AiSummarizerInboundLinks />
           <AiGrammarInboundLinks />
+          <AiParaphraserInboundLinks />
         </div>
       </main>
       <Footer />

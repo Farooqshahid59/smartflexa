@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { AiGrammarInboundLinks } from "@/components/ai-grammar-inbound-links";
+import { AiParaphraserInboundLinks } from "@/components/ai-paraphraser-inbound-links";
 import { AiSummarizerRelatedToolLinks } from "@/components/ai-summarizer-related-tool-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
@@ -225,6 +226,7 @@ export default function AiTextSummarizerPage() {
           <div className="mt-14 space-y-10">
             <AiSummarizerRelatedToolLinks />
             <AiGrammarInboundLinks />
+            <AiParaphraserInboundLinks />
             <RelatedTools currentPath="/tools/ai-text-summarizer" heading="More tools" />
           </div>
         </div>

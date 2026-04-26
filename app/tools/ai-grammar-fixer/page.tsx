@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
 import { AiGrammarRelatedToolLinks } from "@/components/ai-grammar-related-tool-links";
+import { AiParaphraserInboundLinks } from "@/components/ai-paraphraser-inbound-links";
 import { RelatedTools } from "@/components/related-tools";
 import { getToolPageJsonLd, toolSchemas } from "@/lib/schema";
 
@@ -196,6 +197,7 @@ export default function AiGrammarFixerPage() {
 
           <div className="mt-14 space-y-10">
             <AiGrammarRelatedToolLinks />
+            <AiParaphraserInboundLinks />
             <RelatedTools currentPath="/tools/ai-grammar-fixer" heading="More tools" />
           </div>
         </div>
