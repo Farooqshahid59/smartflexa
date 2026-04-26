@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 const HF_MODELS = [
+  // Known hosted model fallback (already working in summarizer route).
+  "facebook/bart-large-cnn",
   "google/flan-t5-large",
   "google/flan-t5-base",
   "google/flan-t5-small",
