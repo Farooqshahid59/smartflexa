@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
-const HF_MODEL = "prithivida/grammar_error_correcter_v1";
-const HF_API_URLS = [
-  `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`,
-  `https://api-inference.huggingface.co/models/${HF_MODEL}`,
+const HF_MODELS = [
+  "google/flan-t5-large",
+  "google/flan-t5-base",
+  "google/flan-t5-small",
+];
+const HF_BASE_URLS = [
+  "https://router.huggingface.co/hf-inference/models",
+  "https://api-inference.huggingface.co/models",
 ];
 const REQUEST_TIMEOUT_MS = 5000;
 const MIN_WORDS = 50;
@@ -17,6 +21,21 @@ function wordCount(text) {
 function cleanText(raw) {
   if (typeof raw !== "string") return "";
   return raw.replace(/\s+/g, " ").trim();
+}
+
+function buildGrammarPrompt(text) {
+  return `Fix grammar, improve clarity, and rewrite this text professionally:\n${text}`;
+}
+
+function shouldTryNextEndpoint(status, message) {
+  if (status === 404) return true;
+  if (typeof message !== "string") return false;
+  const lower = message.toLowerCase();
+  return (
+    lower.includes("model not supported by provider") ||
+    lower.includes("not supported by provider hf-inference") ||
+    lower.includes("cannot post /models/")
+  );
 }
 
 async function parseUpstreamBody(res) {
@@ -79,43 +98,52 @@ export async function POST(request) {
       let lastStatus = 502;
       let lastError = "No corrected text returned by Hugging Face.";
 
-      for (const url of HF_API_URLS) {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${hfToken}`,
-          },
-          body: JSON.stringify({
-            inputs: clipped,
-            options: { wait_for_model: false, use_cache: true },
-          }),
-          signal: controller.signal,
-        });
+      for (const model of HF_MODELS) {
+        for (const baseUrl of HF_BASE_URLS) {
+          const url = `${baseUrl}/${model}`;
+          const res = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${hfToken}`,
+            },
+            body: JSON.stringify({
+              inputs: buildGrammarPrompt(clipped),
+              parameters: {
+                max_new_tokens: 280,
+                temperature: 0.6,
+                do_sample: true,
+                top_p: 0.9,
+              },
+              options: { wait_for_model: false, use_cache: true },
+            }),
+            signal: controller.signal,
+          });
 
-        const upstream = await parseUpstreamBody(res);
+          const upstream = await parseUpstreamBody(res);
 
-        if (!res.ok) {
-          lastStatus = res.status;
-          const base =
-            (upstream &&
-              typeof upstream === "object" &&
-              (upstream.error || upstream.message)) ||
-            (typeof upstream === "string" ? upstream : null) ||
-            `Hugging Face inference failed (${res.status}).`;
-          lastError = `[${url}] ${String(base)}`;
-          if (res.status === 404) continue;
-          return NextResponse.json({ error: lastError }, { status: res.status });
+          if (!res.ok) {
+            lastStatus = res.status;
+            const base =
+              (upstream &&
+                typeof upstream === "object" &&
+                (upstream.error || upstream.message)) ||
+              (typeof upstream === "string" ? upstream : null) ||
+              `Hugging Face inference failed (${res.status}).`;
+            lastError = `[${model}] [${url}] ${String(base)}`;
+            if (shouldTryNextEndpoint(res.status, String(base))) continue;
+            return NextResponse.json({ error: lastError }, { status: res.status });
+          }
+
+          const first = Array.isArray(upstream) ? upstream[0] : upstream;
+          const correctedText = cleanText(
+            first?.generated_text || first?.summary_text || first?.text || "",
+          );
+
+          if (correctedText) return NextResponse.json({ correctedText });
+          lastStatus = 502;
+          lastError = `[${model}] [${url}] No corrected text returned by model.`;
         }
-
-        const first = Array.isArray(upstream) ? upstream[0] : upstream;
-        const correctedText = cleanText(
-          first?.generated_text || first?.summary_text || first?.text || "",
-        );
-
-        if (correctedText) return NextResponse.json({ correctedText });
-        lastStatus = 502;
-        lastError = `[${url}] No corrected text returned by model.`;
       }
 
       return NextResponse.json({ error: lastError }, { status: lastStatus });
