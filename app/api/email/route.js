@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 const HF_MODELS = [
+  // Known hosted model fallback (works in this environment).
+  "facebook/bart-large-cnn",
   "google/flan-t5-large",
   // Fallbacks when large is not available on current provider path.
   "google/flan-t5-base",
