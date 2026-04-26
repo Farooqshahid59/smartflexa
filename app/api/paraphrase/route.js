@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
-const HF_MODEL = "Vamsi/T5_Paraphrase_Paws";
-const HF_API_URLS = [
-  `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`,
-  `https://api-inference.huggingface.co/models/${HF_MODEL}`,
+const HF_MODELS = [
+  "google/flan-t5-large",
+  "google/flan-t5-base",
+  "google/flan-t5-small",
+];
+const HF_BASE_URLS = [
+  "https://router.huggingface.co/hf-inference/models",
+  "https://api-inference.huggingface.co/models",
 ];
 const REQUEST_TIMEOUT_MS = 5000;
 const MIN_WORDS = 50;
@@ -23,6 +27,32 @@ function wordCount(text) {
 function cleanText(raw) {
   if (typeof raw !== "string") return "";
   return raw.replace(/\s+/g, " ").trim();
+}
+
+function buildParaphrasePrompt(text, mode) {
+  const toneHint =
+    mode === "creative"
+      ? "Use more expressive wording while preserving meaning."
+      : mode === "formal"
+        ? "Use a formal and professional tone."
+        : "Keep the wording natural and clear.";
+  return [
+    "Paraphrase the following text in a clear, natural, and human-like way.",
+    "Keep the meaning the same but improve readability.",
+    toneHint,
+    `Text: ${text}`,
+  ].join("\n");
+}
+
+function shouldTryNextEndpoint(status, message) {
+  if (status === 404) return true;
+  if (typeof message !== "string") return false;
+  const lower = message.toLowerCase();
+  return (
+    lower.includes("model not supported by provider") ||
+    lower.includes("not supported by provider hf-inference") ||
+    lower.includes("cannot post /models/")
+  );
 }
 
 async function parseUpstreamBody(res) {
@@ -91,48 +121,50 @@ export async function POST(request) {
       let lastStatus = 502;
       let lastError = "No paraphrased text returned by Hugging Face.";
 
-      for (const url of HF_API_URLS) {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${hfToken}`,
-          },
-          body: JSON.stringify({
-            inputs: `paraphrase: ${clipped}`,
-            parameters: {
-              ...params,
-              max_length: 256,
-              min_length: 40,
+      for (const model of HF_MODELS) {
+        for (const baseUrl of HF_BASE_URLS) {
+          const url = `${baseUrl}/${model}`;
+          const res = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${hfToken}`,
             },
-            options: { wait_for_model: false, use_cache: true },
-          }),
-          signal: controller.signal,
-        });
-
-        const upstream = await parseUpstreamBody(res);
-
-        if (!res.ok) {
-          lastStatus = res.status;
-          const base =
-            (upstream && typeof upstream === "object" && (upstream.error || upstream.message)) ||
-            (typeof upstream === "string" ? upstream : null) ||
-            `Hugging Face inference failed (${res.status}).`;
-          lastError = `[${url}] ${String(base)}`;
-          if (res.status === 404) continue;
-          return NextResponse.json({ error: lastError }, { status: res.status });
-        }
-
-        const variations = extractVariations(upstream);
-        if (variations.length > 0) {
-          return NextResponse.json({
-            paraphrasedText: variations[0],
-            variations,
+            body: JSON.stringify({
+              inputs: buildParaphrasePrompt(clipped, selected),
+              parameters: {
+                ...params,
+                max_new_tokens: 260,
+              },
+              options: { wait_for_model: false, use_cache: true },
+            }),
+            signal: controller.signal,
           });
-        }
 
-        lastStatus = 502;
-        lastError = `[${url}] No paraphrased text returned by model.`;
+          const upstream = await parseUpstreamBody(res);
+
+          if (!res.ok) {
+            lastStatus = res.status;
+            const base =
+              (upstream && typeof upstream === "object" && (upstream.error || upstream.message)) ||
+              (typeof upstream === "string" ? upstream : null) ||
+              `Hugging Face inference failed (${res.status}).`;
+            lastError = `[${model}] [${url}] ${String(base)}`;
+            if (shouldTryNextEndpoint(res.status, String(base))) continue;
+            return NextResponse.json({ error: lastError }, { status: res.status });
+          }
+
+          const variations = extractVariations(upstream);
+          if (variations.length > 0) {
+            return NextResponse.json({
+              paraphrasedText: variations[0],
+              variations,
+            });
+          }
+
+          lastStatus = 502;
+          lastError = `[${model}] [${url}] No paraphrased text returned by model.`;
+        }
       }
 
       return NextResponse.json({ error: lastError }, { status: lastStatus });
