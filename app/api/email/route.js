@@ -52,6 +52,16 @@ function extractEmail(upstream) {
   return "";
 }
 
+function shouldTryNextEndpoint(status, message) {
+  if (status === 404) return true;
+  if (typeof message !== "string") return false;
+  const lower = message.toLowerCase();
+  return (
+    lower.includes("model not supported by provider") ||
+    lower.includes("not supported by provider hf-inference")
+  );
+}
+
 export async function POST(request) {
   try {
     const body = await request.json().catch(() => null);
@@ -116,7 +126,7 @@ export async function POST(request) {
             (typeof upstream === "string" ? upstream : null) ||
             `Hugging Face inference failed (${res.status}).`;
           lastError = `[${url}] ${String(base)}`;
-          if (res.status === 404) continue;
+          if (shouldTryNextEndpoint(res.status, String(base))) continue;
           return NextResponse.json({ error: lastError }, { status: res.status });
         }
 
