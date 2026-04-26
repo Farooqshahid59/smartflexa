@@ -9,7 +9,7 @@ const MIN_WORDS = 50;
 const MAX_WORDS = 1500;
 
 function countWords(text: string): number {
-  return (text.trim().match(/[\w'-]+/g) || []).length;
+  return (text.trim().match(/\b[\w'-]+\b/g) || []).length;
 }
 
 export function AiParaphraserTool() {

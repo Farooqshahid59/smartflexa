@@ -11,7 +11,7 @@ const MAX_WORDS = 1500;
 const MAX_INPUT_CHARS = 8000;
 
 function wordCount(text) {
-  return (text.trim().match(/[\w'-]+/g) || []).length;
+  return (text.trim().match(/\b[\w'-]+\b/g) || []).length;
 }
 
 function cleanText(raw) {

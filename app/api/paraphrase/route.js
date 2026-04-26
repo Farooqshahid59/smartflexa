@@ -17,7 +17,7 @@ const MODE_PARAMS = {
 };
 
 function wordCount(text) {
-  return (text.trim().match(/[\w'-]+/g) || []).length;
+  return (text.trim().match(/\b[\w'-]+\b/g) || []).length;
 }
 
 function cleanText(raw) {
