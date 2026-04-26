@@ -9,7 +9,7 @@ const HF_BASE_URLS = [
   "https://router.huggingface.co/hf-inference/models",
   "https://api-inference.huggingface.co/models",
 ];
-const REQUEST_TIMEOUT_MS = 5000;
+const REQUEST_TIMEOUT_MS = 18000;
 const MIN_WORDS = 50;
 const MAX_WORDS = 1500;
 const MAX_INPUT_CHARS = 6000;
@@ -136,7 +136,7 @@ export async function POST(request) {
                 ...params,
                 max_new_tokens: 260,
               },
-              options: { wait_for_model: false, use_cache: true },
+              options: { wait_for_model: true, use_cache: true },
             }),
             signal: controller.signal,
           });
