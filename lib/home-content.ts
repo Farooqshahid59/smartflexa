@@ -56,7 +56,12 @@ export const siteBrand = {
   initials: "SF",
 } as const;
 
-export type ToolCategoryId = "developer" | "image" | "pdf" | "calculators";
+export type ToolCategoryId =
+  | "developer"
+  | "ai"
+  | "image"
+  | "pdf"
+  | "calculators";
 
 export type ToolItem = {
   name: string;
@@ -147,21 +152,21 @@ export const defaultTools: ToolItem[] = [
     description: "Summarize long text and articles instantly.",
     icon: Sparkles,
     href: "/tools/ai-text-summarizer",
-    category: "developer",
+    category: "ai",
   },
   {
     name: "AI Grammar Fixer",
     description: "Fix grammar and improve text instantly.",
     icon: Sparkles,
     href: "/tools/ai-grammar-fixer",
-    category: "developer",
+    category: "ai",
   },
   {
     name: "AI Paraphrasing Tool",
     description: "Rewrite text and sentences instantly using AI.",
     icon: Sparkles,
     href: "/tools/ai-paraphraser",
-    category: "developer",
+    category: "ai",
   },
   {
     name: "Lorem Ipsum Generator",
@@ -497,6 +502,7 @@ export type CategoryItem = {
 
 const CATEGORY_ORDER: ToolCategoryId[] = [
   "developer",
+  "ai",
   "image",
   "pdf",
   "calculators",
@@ -511,6 +517,12 @@ const CATEGORY_DEFINITIONS: Record<
     description: "JSON, Base64, regex testing, and more for developers",
     icon: Code2,
     href: "/categories/developer",
+  },
+  ai: {
+    name: "AI Tools",
+    description: "Summarize, fix grammar, and paraphrase with AI",
+    icon: Sparkles,
+    href: "/categories/ai",
   },
   image: {
     name: "Image Tools",
@@ -535,6 +547,7 @@ const CATEGORY_DEFINITIONS: Record<
 export function getHomeCategories(tools: ToolItem[]): CategoryItem[] {
   const counts: Record<ToolCategoryId, number> = {
     developer: 0,
+    ai: 0,
     image: 0,
     pdf: 0,
     calculators: 0,
