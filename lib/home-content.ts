@@ -176,6 +176,13 @@ export const defaultTools: ToolItem[] = [
     category: "ai",
   },
   {
+    name: "AI Detector",
+    description: "Detect whether text appears AI-generated or human-like.",
+    icon: Sparkles,
+    href: "/ai-detector",
+    category: "ai",
+  },
+  {
     name: "Lorem Ipsum Generator",
     description:
       "Placeholder paragraphs for mockups—set paragraph count and optional word total.",
