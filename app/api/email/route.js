@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 
-const HF_MODEL = "google/flan-t5-large";
-const HF_API_URLS = [
-  `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`,
-  `https://api-inference.huggingface.co/models/${HF_MODEL}`,
+const HF_MODELS = [
+  "google/flan-t5-large",
+  // Fallbacks when large is not available on current provider path.
+  "google/flan-t5-base",
+  "google/flan-t5-small",
+];
+const HF_BASE_URLS = [
+  "https://router.huggingface.co/hf-inference/models",
+  "https://api-inference.huggingface.co/models",
 ];
 const REQUEST_TIMEOUT_MS = 6500;
 const MIN_WORDS = 10;
@@ -58,7 +63,8 @@ function shouldTryNextEndpoint(status, message) {
   const lower = message.toLowerCase();
   return (
     lower.includes("model not supported by provider") ||
-    lower.includes("not supported by provider hf-inference")
+    lower.includes("not supported by provider hf-inference") ||
+    lower.includes("cannot post /models/")
   );
 }
 
@@ -98,43 +104,46 @@ export async function POST(request) {
       let lastStatus = 502;
       let lastError = "No email text returned by model.";
 
-      for (const url of HF_API_URLS) {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${hfToken}`,
-          },
-          body: JSON.stringify({
-            inputs: promptFor({ text: clipped, purpose, tone }),
-            parameters: {
-              max_new_tokens: 240,
-              temperature: tone === "creative" ? 1.1 : tone === "short" ? 0.7 : 0.85,
-              do_sample: true,
-              top_p: 0.9,
+      for (const model of HF_MODELS) {
+        for (const baseUrl of HF_BASE_URLS) {
+          const url = `${baseUrl}/${model}`;
+          const res = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${hfToken}`,
             },
-            options: { wait_for_model: false, use_cache: true },
-          }),
-          signal: controller.signal,
-        });
+            body: JSON.stringify({
+              inputs: promptFor({ text: clipped, purpose, tone }),
+              parameters: {
+                max_new_tokens: 240,
+                temperature: tone === "short" ? 0.7 : 0.85,
+                do_sample: true,
+                top_p: 0.9,
+              },
+              options: { wait_for_model: false, use_cache: true },
+            }),
+            signal: controller.signal,
+          });
 
-        const upstream = await parseUpstreamBody(res);
-        if (!res.ok) {
-          lastStatus = res.status;
-          const base =
-            (upstream && typeof upstream === "object" && (upstream.error || upstream.message)) ||
-            (typeof upstream === "string" ? upstream : null) ||
-            `Hugging Face inference failed (${res.status}).`;
-          lastError = `[${url}] ${String(base)}`;
-          if (shouldTryNextEndpoint(res.status, String(base))) continue;
-          return NextResponse.json({ error: lastError }, { status: res.status });
+          const upstream = await parseUpstreamBody(res);
+          if (!res.ok) {
+            lastStatus = res.status;
+            const base =
+              (upstream && typeof upstream === "object" && (upstream.error || upstream.message)) ||
+              (typeof upstream === "string" ? upstream : null) ||
+              `Hugging Face inference failed (${res.status}).`;
+            lastError = `[${model}] [${url}] ${String(base)}`;
+            if (shouldTryNextEndpoint(res.status, String(base))) continue;
+            return NextResponse.json({ error: lastError }, { status: res.status });
+          }
+
+          const email = extractEmail(upstream);
+          if (email) return NextResponse.json({ email });
+
+          lastStatus = 502;
+          lastError = `[${model}] [${url}] No email text returned by model.`;
         }
-
-        const email = extractEmail(upstream);
-        if (email) return NextResponse.json({ email });
-
-        lastStatus = 502;
-        lastError = `[${url}] No email text returned by model.`;
       }
 
       return NextResponse.json({ error: lastError }, { status: lastStatus });
