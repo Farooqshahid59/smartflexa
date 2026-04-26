@@ -817,6 +817,46 @@ export const toolSchemas = {
     applicationCategory: "DeveloperApplication" as const,
     breadcrumbName: "Summarize text free",
   },
+  aiGrammarFixer: {
+    name: "AI Grammar Fixer Free (Correct Sentences Instantly)",
+    description:
+      "Fix grammar mistakes and improve sentences instantly using AI. Free grammar correction tool online.",
+    path: "/tools/ai-grammar-fixer",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI grammar fixer",
+  },
+  grammarCheckerOnline: {
+    name: "Grammar Checker Online — AI Sentence Fixer",
+    description:
+      "Check grammar online and improve sentence clarity instantly with AI-powered correction on SmartFlexa.",
+    path: "/grammar-checker-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Grammar checker online",
+  },
+  fixSentencesOnline: {
+    name: "Fix Sentences Online — Rewrite for Clarity",
+    description:
+      "Fix sentences online with AI grammar correction, clearer phrasing, and copy-ready output on SmartFlexa.",
+    path: "/fix-sentences-online",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Fix sentences online",
+  },
+  correctGrammarText: {
+    name: "Correct Grammar Text — Instant AI Proofing",
+    description:
+      "Correct grammar text with AI in your browser: punctuation fixes, rewritten phrasing, and clean copy output.",
+    path: "/correct-grammar-text",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "Correct grammar text",
+  },
+  aiGrammarCorrection: {
+    name: "AI Grammar Correction — Rewrite and Polish",
+    description:
+      "AI grammar correction tool for emails, blogs, and notes with fast Hugging Face inference on SmartFlexa.",
+    path: "/ai-grammar-correction",
+    applicationCategory: "DeveloperApplication" as const,
+    breadcrumbName: "AI grammar correction",
+  },
   openGraphPreviewTool: {
     name: "Open Graph Preview Tool (Facebook & Twitter Link Preview)",
     description:

@@ -541,6 +541,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.82,
     },
     {
+      url: `${base}/tools/ai-grammar-fixer`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/grammar-checker-online`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/fix-sentences-online`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/correct-grammar-text`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/ai-grammar-correction`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
       url: `${base}/remove-background-online`,
       lastModified: new Date(),
       changeFrequency: "monthly",

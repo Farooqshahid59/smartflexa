@@ -150,6 +150,13 @@ export const defaultTools: ToolItem[] = [
     category: "developer",
   },
   {
+    name: "AI Grammar Fixer",
+    description: "Fix grammar and improve text instantly.",
+    icon: Sparkles,
+    href: "/tools/ai-grammar-fixer",
+    category: "developer",
+  },
+  {
     name: "Lorem Ipsum Generator",
     description:
       "Placeholder paragraphs for mockups—set paragraph count and optional word total.",

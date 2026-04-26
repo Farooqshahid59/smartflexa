@@ -44,6 +44,7 @@ const LINKS = [
   { href: "/tools/meta-tag-generator", label: "Meta Tag Generator" },
   { href: "/tools/keyword-density-checker", label: "Keyword Density Checker" },
   { href: "/tools/ai-text-summarizer", label: "AI Text Summarizer" },
+  { href: "/tools/ai-grammar-fixer", label: "AI Grammar Fixer" },
   { href: "/tools/open-graph-preview", label: "Open Graph Preview" },
   { href: "/tools/robots-txt-generator", label: "Robots.txt Generator" },
   { href: "/tools/sitemap-generator", label: "Sitemap Generator" },
