@@ -245,6 +245,13 @@ export const defaultTools: ToolItem[] = [
     category: "calculators",
   },
   {
+    name: "UK Invoice Generator",
+    description: "GBP invoices with UK VAT, logo upload, and payment details.",
+    icon: Receipt,
+    href: "/tools/uk-invoice-generator",
+    category: "calculators",
+  },
+  {
     name: "BMI Calculator",
     description:
       "Body Mass Index from weight (kg) and height (cm or m) with category labels.",

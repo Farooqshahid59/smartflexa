@@ -127,6 +127,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.82,
     },
     {
+      url: `${base}/tools/uk-invoice-generator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/uk-invoice-generator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/vat-invoice-generator-uk`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/free-invoice-generator-uk`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/create-invoice-online-uk`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
+      url: `${base}/professional-invoice-generator-uk`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82,
+    },
+    {
       url: `${base}/tools/meta-tag-generator`,
       lastModified: new Date(),
       changeFrequency: "monthly",

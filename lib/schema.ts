@@ -729,6 +729,54 @@ export const toolSchemas = {
     applicationCategory: "FinancialApplication" as const,
     breadcrumbName: "Freelance invoice generator",
   },
+  ukInvoiceGenerator: {
+    name: "UK Invoice Generator — Free VAT Invoices in GBP",
+    description:
+      "Create professional UK invoices in British Pounds with VAT support, company logo upload, payment details, and PDF download—all client-side.",
+    path: "/tools/uk-invoice-generator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "UK Invoice Generator",
+  },
+  ukInvoiceGeneratorLanding: {
+    name: "UK Invoice Generator — Free GBP Invoices with VAT",
+    description:
+      "Free UK invoice generator for freelancers and businesses. GBP formatting, VAT rates, logo upload, and instant PDF—no account required.",
+    path: "/uk-invoice-generator",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "UK invoice generator",
+  },
+  vatInvoiceGeneratorUk: {
+    name: "VAT Invoice Generator UK — 0%, 5%, 20% Rates",
+    description:
+      "Create VAT-compliant UK invoices with standard rates, custom VAT, GBP totals, and PDF export. For VAT-registered sole traders and limited companies.",
+    path: "/vat-invoice-generator-uk",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "VAT invoice generator UK",
+  },
+  freeInvoiceGeneratorUk: {
+    name: "Free Invoice Generator UK — No Signup PDF Invoices",
+    description:
+      "Free invoice generator UK with GBP line items, VAT, logo, and browser-based PDF download. Business settings saved locally.",
+    path: "/free-invoice-generator-uk",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Free invoice generator UK",
+  },
+  createInvoiceOnlineUk: {
+    name: "Create Invoice Online UK — Free GBP Invoice Maker",
+    description:
+      "Create invoice online UK in minutes: line items, VAT, logo, payment details, and professional PDF—runs locally in your browser.",
+    path: "/create-invoice-online-uk",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Create invoice online UK",
+  },
+  professionalInvoiceGeneratorUk: {
+    name: "Professional Invoice Generator UK — Logo & VAT",
+    description:
+      "Professional invoice generator UK with company logo, VAT registration fields, payment instructions, and clean printable PDF layout.",
+    path: "/professional-invoice-generator-uk",
+    applicationCategory: "FinancialApplication" as const,
+    breadcrumbName: "Professional invoice generator UK",
+  },
   metaTagGenerator: {
     name: "Meta Tag Generator Free (SEO Meta Tags for Website)",
     description:

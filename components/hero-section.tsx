@@ -18,7 +18,7 @@ export type HeroSectionProps = {
 
 export function HeroSection({
   title = "Smart tools that simplify your work",
-  description = "Free online tools for developers, creators, and everyday users. No signup required.",
+  description = "Free AI tools, developer utilities, image/PDF tools, and calculators. Fast, browser-based, and no signup required.",
   searchPlaceholder = "Search tools...",
   browseHref = "#tools",
   searchQuery,
@@ -85,7 +85,7 @@ export function HeroSection({
                   }
                 }}
               >
-                Browse Tools
+                Explore Free Tools
               </Link>
             </Button>
           </div>

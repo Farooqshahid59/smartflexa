@@ -41,6 +41,7 @@ const LINKS = [
   { href: "/tools/uuid-generator", label: "UUID Generator" },
   { href: "/tools/fake-address-generator", label: "Fake Address Generator" },
   { href: "/tools/invoice-generator", label: "Invoice Generator" },
+  { href: "/tools/uk-invoice-generator", label: "UK Invoice Generator" },
   { href: "/tools/meta-tag-generator", label: "Meta Tag Generator" },
   { href: "/tools/keyword-density-checker", label: "Keyword Density Checker" },
   { href: "/tools/ai-text-summarizer", label: "AI Text Summarizer" },
